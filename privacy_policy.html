@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gizlilik Politikası - Litra AR Draw</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+                         Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            padding: 20px;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 48px;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 24px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        h1 {
+            font-size: 38px;
+            margin-bottom: 12px;
+            color: #1a202c;
+            font-weight: 700;
+        }
+
+        .app-name {
+            color: #667eea;
+        }
+
+        .updated {
+            color: #718096;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .intro {
+            background: #f7fafc;
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            border-left: 4px solid #667eea;
+        }
+
+        h2 {
+            font-size: 26px;
+            margin-top: 40px;
+            margin-bottom: 16px;
+            color: #667eea;
+            font-weight: 600;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        h3 {
+            font-size: 20px;
+            margin-top: 28px;
+            margin-bottom: 12px;
+            color: #2d3748;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: #4a5568;
+            text-align: justify;
+        }
+
+        ul {
+            margin-left: 24px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            color: #4a5568;
+            padding-left: 8px;
+        }
+
+        li strong {
+            color: #2d3748;
+        }
+
+        .highlight-box {
+            background: #edf2f7;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 24px 0;
+            border-left: 4px solid #48bb78;
+        }
+
+        .warning-box {
+            background: #fff5f5;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 24px 0;
+            border-left: 4px solid #f56565;
+        }
+
+        .info-box {
+            background: #ebf8ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 24px 0;
+            border-left: 4px solid #4299e1;
+        }
+
+        .contact-section {
+            background: #f7fafc;
+            padding: 32px;
+            border-radius: 12px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            margin-top: 0;
+            border-bottom: none;
+        }
+
+        .email-link {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 16px;
+            transition: background 0.3s ease;
+        }
+
+        .email-link:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .footer {
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 2px solid #e2e8f0;
+            text-align: center;
+            color: #718096;
+            font-size: 14px;
+        }
+
+        .toc {
+            background: #f7fafc;
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 32px;
+        }
+
+        .toc h3 {
+            margin-top: 0;
+            margin-bottom: 16px;
+            color: #667eea;
+        }
+
+        .toc ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .toc li {
+            margin-bottom: 8px;
+        }
+
+        .toc a {
+            color: #4a5568;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .toc a:hover {
+            color: #667eea;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 24px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1><span class="app-name">Litra AR Draw</span> Gizlilik Politikası</h1>
+        <div class="updated">Son Güncelleme: 17 Aralık 2024</div>
+    </div>
+
+    <div class="intro">
+        <p>
+            <strong>Litra AR Draw</strong> uygulamasını kullanarak, kişisel bilgilerinizin güvenliğine verdiğimiz 
+            önemi kabul etmiş olursunuz. Bu Gizlilik Politikası, uygulamayı kullanırken hangi bilgilerin 
+            toplandığını, nasıl kullanıldığını ve haklarınızın neler olduğunu açıklamaktadır.
+        </p>
+    </div>
+
+    <div class="toc">
+        <h3>📋 İçindekiler</h3>
+        <ul>
+            <li>1. Tanımlar</li>
+            <li>2. Toplanan Veriler</li>
+            <li>3. Kamera ve Depolama İzinleri</li>
+            <li>4. Verilerin Kullanımı</li>
+            <li>5. Veri Güvenliği</li>
+            <li>6. Çocukların Gizliliği</li>
+            <li>7. Haklarınız</li>
+            <li>8. İletişim</li>
+        </ul>
+    </div>
+
+    <h2>1. Tanımlar ve Genel Bilgiler</h2>
+    
+    <h3>Uygulama</h3>
+    <p>
+        <strong>"Uygulama"</strong> terimi, <strong>Litra AR Draw</strong> adlı mobil uygulamayı ifade eder. 
+        Bu uygulama, artırılmış gerçeklik (AR) teknolojisi kullanarak kullanıcıların gerçek dünya üzerine 
+        çizimler yapmasını sağlayan yaratıcı bir araçtır.
+    </p>
+
+    <h3>Şirket Bilgileri</h3>
+    <ul>
+        <li><strong>Geliştirici:</strong> Arrow App Studio</li>
+        <li><strong>Ülke:</strong> Türkiye</li>
+        <li><strong>İletişim:</strong> arrowappstudioiletisim@gmail.com</li>
+    </ul>
+
+    <h3>Temel Kavramlar</h3>
+    <ul>
+        <li><strong>Kişisel Veri:</strong> Kimliği belirli veya belirlenebilir gerçek kişiye ilişkin her türlü bilgi</li>
+        <li><strong>Kullanım Verisi:</strong> Uygulama kullanımı sırasında otomatik olarak toplanan veriler</li>
+        <li><strong>Cihaz:</strong> Uygulamaya erişim sağlayan akıllı telefon, tablet veya benzeri mobil cihaz</li>
+        <li><strong>Hizmet:</strong> Litra AR Draw uygulaması ve sunduğu tüm özellikler</li>
+    </ul>
+
+    <h2>2. Toplanan Veriler ve Kapsamı</h2>
+
+    <div class="info-box">
+        <h3>🔒 Önemli Not</h3>
+        <p>
+            <strong>Litra AR Draw uygulaması, kullanıcılarının gizliliğine saygı duyar ve minimum veri 
+            toplama prensibini benimser.</strong> Uygulamayı kullanmak için hesap oluşturmanıza gerek yoktur 
+            ve kişisel bilgilerinizi paylaşmanızı istemeyiz.
+        </p>
+    </div>
+
+    <h3>2.1. Otomatik Toplanan Veriler</h3>
+    <p>Uygulama kullanımı sırasında aşağıdaki teknik veriler otomatik olarak toplanabilir:</p>
+    <ul>
+        <li><strong>Cihaz Bilgileri:</strong> Cihaz modeli, işletim sistemi versiyonu, benzersiz cihaz tanımlayıcıları</li>
+        <li><strong>Kullanım İstatistikleri:</strong> Uygulama açılma sayısı, kullanım süreleri, hata raporları</li>
+        <li><strong>Teknik Veriler:</strong> IP adresi, ağ bağlantı tipi, uygulama performans metrikleri</li>
+        <li><strong>AR Sensör Verileri:</strong> Kamera konumu ve yönü (sadece AR özelliklerinin çalışması için)</li>
+    </ul>
+
+    <h3>2.2. Kullanıcı Tarafından Sağlanan Veriler</h3>
+    <div class="highlight-box">
+        <p><strong>Litra AR Draw şu verileri TOPLAMAZ:</strong></p>
+        <ul>
+            <li>❌ İsim, soyisim, e-posta gibi kimlik bilgileri</li>
+            <li>❌ Telefon numarası veya adres bilgileri</li>
+            <li>❌ Ödeme veya finansal bilgiler</li>
+            <li>❌ Konum verileri (GPS)</li>
+            <li>❌ Sosyal medya profil bilgileri</li>
+        </ul>
+    </div>
+
+    <h2>3. Kamera ve Depolama İzinleri</h2>
+
+    <div class="warning-box">
+        <h3>⚠️ Gerekli İzinler</h3>
+        <p>
+            Litra AR Draw, temel işlevselliğini sağlamak için bazı cihaz izinlerine ihtiyaç duyar. 
+            Bu izinler yalnızca uygulama özellikleri için kullanılır ve hiçbir veri sunucularımıza 
+            veya üçüncü taraflara gönderilmez.
+        </p>
+    </div>
+
+    <h3>3.1. Kamera İzni</h3>
+    <p><strong>Neden Gerekli:</strong> Artırılmış gerçeklik (AR) özelliklerinin çalışması için kamera erişimi zorunludur.</p>
+    <ul>
+        <li>📸 Gerçek zamanlı kamera görüntüsü üzerine çizim yapabilme</li>
+        <li>🎨 AR şablonlarını kamera görüntüsüne yerleştirme</li>
+        <li>👁️ Perspektif ve derinlik algılama</li>
+    </ul>
+    <p><strong>Güvence:</strong> Kamera görüntüleri hiçbir zaman kaydedilmez, saklanmaz veya paylaşılmaz. Sadece cihazınızda gerçek zamanlı olarak işlenir.</p>
+
+    <h3>3.2. Depolama İzni</h3>
+    <p><strong>Neden Gerekli:</strong> Oluşturduğunuz çizimleri ve eserleri kaydetmek için depolama erişimi gerekir.</p>
+    <ul>
+        <li>💾 Çizimlerinizi cihazınızın galerisine kaydetme</li>
+        <li>📤 Eserlerinizi dışa aktarma ve paylaşma</li>
+        <li>🖼️ Şablon görsellerini yükleme</li>
+    </ul>
+    <p><strong>Güvence:</strong> Depolama izni sadece sizin kaydetmeyi seçtiğiniz içerikler için kullanılır. Galerinizde bulunan diğer fotoğraflar veya dosyalara erişilmez.</p>
+
+    <h3>3.3. İzin Yönetimi</h3>
+    <p>İstediğiniz zaman cihaz ayarlarından uygulama izinlerini değiştirebilir veya iptal edebilirsiniz:</p>
+    <ul>
+        <li><strong>Android:</strong> Ayarlar → Uygulamalar → Litra AR Draw → İzinler</li>
+        <li><strong>iOS:</strong> Ayarlar → Gizlilik → Kamera/Fotoğraflar → Litra AR Draw</li>
+    </ul>
+
+    <h2>4. Verilerin Kullanım Amaçları</h2>
+
+    <p>Toplanan veriler yalnızca aşağıdaki amaçlarla kullanılır:</p>
+
+    <h3>4.1. Temel Hizmet Sunumu</h3>
+    <ul>
+        <li>Uygulamanın temel AR çizim özelliklerinin çalışmasını sağlamak</li>
+        <li>Kullanıcı deneyimini optimize etmek ve iyileştirmek</li>
+        <li>Teknik sorunları tespit etmek ve çözmek</li>
+    </ul>
+
+    <h3>4.2. Performans İyileştirme</h3>
+    <ul>
+        <li>Uygulama performansını analiz etmek ve optimize etmek</li>
+        <li>Çökme raporlarını inceleyerek hataları düzeltmek</li>
+        <li>Yeni özellikler geliştirmek ve test etmek</li>
+    </ul>
+
+    <h3>4.3. Güvenlik ve Yasal Yükümlülükler</h3>
+    <ul>
+        <li>Sistemin güvenliğini sağlamak ve kötüye kullanımı önlemek</li>
+        <li>Yasal gereksinimlere ve düzenlemelere uymak</li>
+        <li>Gerekli durumlarda yetkili mercilerle işbirliği yapmak</li>
+    </ul>
+
+    <h2>5. Veri Paylaşımı ve Üçüncü Taraflar</h2>
+
+    <div class="info-box">
+        <h3>🛡️ Gizlilik Taahhüdü</h3>
+        <p>
+            <strong>Litra AR Draw, kullanıcı verilerini üçüncü taraflarla paylaşmaz, satmaz 
+            veya kiralamaz.</strong> Verileriniz yalnızca yasal zorunluluklar veya aşağıda belirtilen 
+            sınırlı durumlar dışında paylaşılmaz.
+        </p>
+    </div>
+
+    <h3>5.1. Hizmet Sağlayıcılar</h3>
+    <p>Uygulama işlevselliği için aşağıdaki üçüncü taraf hizmetler kullanılabilir:</p>
+    <ul>
+        <li><strong>Analitik Hizmetler:</strong> Anonim kullanım istatistikleri (Google Analytics, Firebase vb.)</li>
+        <li><strong>Hata Takip:</strong> Çökme raporları ve hata ayıklama (Crashlytics vb.)</li>
+        <li><strong>Altyapı Sağlayıcılar:</strong> Sunucu ve veri depolama hizmetleri</li>
+    </ul>
+
+    <h3>5.2. Yasal Gereklilikler</h3>
+    <p>Aşağıdaki durumlarda verilerinizi paylaşmak zorunda kalabiliriz:</p>
+    <ul>
+        <li>Mahkeme kararı veya yasal süreç gereği</li>
+        <li>Kamu güvenliği veya kolluk kuvvetleri talebi</li>
+        <li>Yasal haklarımızı korumak için gerekli olduğunda</li>
+    </ul>
+
+    <h2>6. Veri Güvenliği</h2>
+
+    <p>
+        Verilerinizin güvenliği bizim için önceliklidir. Kişisel verilerinizi korumak için 
+        endüstri standardı güvenlik önlemleri alıyoruz:
+    </p>
+
+    <ul>
+        <li>🔐 <strong>Şifreleme:</strong> Tüm veri iletişimleri SSL/TLS şifrelemesi ile korunur</li>
+        <li>🔒 <strong>Güvenli Depolama:</strong> Veriler güvenli sunucularda saklanır</li>
+        <li>👥 <strong>Erişim Kontrolü:</strong> Verilere sadece yetkili personel erişebilir</li>
+        <li>🔍 <strong>Düzenli Denetim:</strong> Güvenlik sistemleri düzenli olarak test edilir</li>
+        <li>⚡ <strong>Güncel Teknoloji:</strong> En son güvenlik yamalarını uygularız</li>
+    </ul>
+
+    <div class="warning-box">
+        <p>
+            <strong>Önemli Uyarı:</strong> İnternet üzerinden hiçbir veri iletim yöntemi veya 
+            elektronik depolama yöntemi %100 güvenli değildir. Ticari olarak kabul edilebilir 
+            yöntemler kullanarak verilerinizi korumaya çalışsak da, mutlak güvenliği garanti edemeyiz.
+        </p>
+    </div>
+
+    <h2>7. Veri Saklama Süresi</h2>
+
+    <p>Verilerinizi yalnızca gerekli olduğu sürece saklarız:</p>
+
+    <ul>
+        <li><strong>Kullanım Verileri:</strong> Genellikle 90 gün içinde silinir veya anonimleştirilir</li>
+        <li><strong>Teknik Loglar:</strong> Güvenlik ve sorun giderme için maksimum 1 yıl saklanır</li>
+        <li><strong>Hata Raporları:</strong> Sorun çözüldükten sonra 30 gün içinde silinir</li>
+        <li><strong>Yasal Zorunluluklar:</strong> Kanuni saklama süreleri uygulanır</li>
+    </ul>
+
+    <h2>8. Çocukların Gizliliği</h2>
+
+    <div class="highlight-box">
+        <h3>👶 13 Yaş Altı Kullanıcılar</h3>
+        <p>
+            Litra AR Draw uygulaması <strong>13 yaşın altındaki çocuklara yönelik değildir</strong> 
+            ve bilerek 13 yaşın altındaki kişilerden kişisel veri toplamayız.
+        </p>
+        <p>
+            Eğer ebeveyn veya vasi olarak, çocuğunuzun bize kişisel veri sağladığını fark ederseniz, 
+            lütfen bizimle iletişime geçin. Bu durumda, ebeveyn onayı doğrulaması yapılamadığı için 
+            ilgili bilgileri sunucularımızdan derhal sileceğiz.
+        </p>
+    </div>
+
+    <h3>Ebeveyn Kontrolü</h3>
+    <p>Ebeveynler ve vasiler için öneriler:</p>
+    <ul>
+        <li>Çocukların uygulama kullanımını gözetim altında tutun</li>
+        <li>Cihaz ebeveyn kontrol özelliklerini aktif edin</li>
+        <li>Uygulama izinlerini düzenli olarak kontrol edin</li>
+        <li>Çocuklarınızla çevrimiçi güvenlik hakkında konuşun</li>
+    </ul>
+
+    <h2>9. Haklarınız (KVKK Kapsamında)</h2>
+
+    <p>
+        6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) uyarınca, kişisel verileriniz 
+        ile ilgili aşağıdaki haklara sahipsiniz:
+    </p>
+
+    <div class="info-box">
+        <ul>
+            <li>✅ Kişisel verilerinizin işlenip işlenmediğini öğrenme</li>
+            <li>✅ Kişisel verileriniz işlenmişse buna ilişkin bilgi talep etme</li>
+            <li>✅ Kişisel verilerinizin işlenme amacını ve bunların amacına uygun kullanılıp kullanılmadığını öğrenme</li>
+            <li>✅ Yurt içinde veya yurt dışında kişisel verilerinizin aktarıldığı üçüncü kişileri bilme</li>
+            <li>✅ Kişisel verilerinizin eksik veya yanlış işlenmiş olması hâlinde bunların düzeltilmesini isteme</li>
+            <li>✅ KVKK'nın 7. maddesinde öngörülen şartlar çerçevesinde kişisel verilerinizin silinmesini veya yok edilmesini isteme</li>
+            <li>✅ Düzeltme, silme ve yok edilme işlemlerinin paylaşıldığı üçüncü kişilere bildirilmesini isteme</li>
+            <li>✅ İşlenen verilerin münhasıran otomatik sistemler vasıtasıyla analiz edilmesi suretiyle aleyhinize bir sonucun ortaya çıkmasına itiraz etme</li>
+            <li>✅ Kişisel verilerinizin kanuna aykırı olarak işlenmesi sebebiyle zarara uğramanız hâlinde zararın giderilmesini talep etme</li>
+        </ul>
+    </div>
+
+    <h3>Haklarınızı Nasıl Kullanabilirsiniz?</h3>
+    <p>Yukarıdaki haklarınızı kullanmak için bizimle iletişime geçebilirsiniz:</p>
+    <ul>
+        <li>📧 E-posta: arrowappstudioiletisim@gmail.com</li>
+        <li>📝 Başvurularınız 30 gün içinde değerlendirilecektir</li>
+        <li>🆓 Başvurular ücretsizdir (işlem maliyeti varsa yansıtılabilir)</li>
+    </ul>
+
+    <h2>10. Çerezler ve Takip Teknolojileri</h2>
+
+    <p>
+        Litra AR Draw uygulaması, web tabanlı olmadığı için geleneksel çerez (cookie) kullanmaz. 
+        Ancak mobil platformlara özgü şu teknolojiler kullanılabilir:
+    </p>
+
+    <ul>
+        <li><strong>Reklam Tanımlayıcıları:</strong> IDFA (iOS) ve GAID (Android) - reklam gösterimi için</li>
+        <li><strong>Analytics SDK'ları:</strong> Anonim kullanım istatistikleri toplama</li>
+        <li><strong>Crash Reporting:</strong> Hata raporlama ve performans izleme</li>
+    </ul>
+
+    <h3>Takibi Devre Dışı Bırakma</h3>
+    <ul>
+        <li><strong>iOS:</strong> Ayarlar → Gizlilik → Reklam → Reklam İzlemeyi Sınırla</li>
+        <li><strong>Android:</strong> Ayarlar → Google → Reklamlar → Reklam kişiselleştirmeyi devre dışı bırak</li>
+    </ul>
+
+    <h2>11. Uluslararası Veri Transferi</h2>
+
+    <p>
+        Verileriniz, bulut altyapısı hizmetleri nedeniyle Türkiye dışındaki sunucularda işlenebilir. 
+        Bu durumda, verilerinizi korumak için:
+    </p>
+
+    <ul>
+        <li>Veri işleme anlaşmaları yapılmıştır</li>
+        <li>GDPR ve KVKK standartlarına uyum sağlanmıştır</li>
+        <li>Uygun güvenlik önlemleri alınmıştır</li>
+    </ul>
+
+    <h2>12. Gizlilik Politikası Değişiklikleri</h2>
+
+    <div class="warning-box">
+        <p>
+            Bu Gizlilik Politikasını zaman zaman güncelleyebiliriz. Değişiklikler bu sayfada 
+            yayınlandığı anda yürürlüğe girer. Önemli değişiklikler için:
+        </p>
+        <ul>
+            <li>📱 Uygulama içi bildirim gönderilebilir</li>
+            <li>📧 E-posta bildirimi yapılabilir (e-posta adresiniz varsa)</li>
+            <li>📅 "Son Güncelleme" tarihi değiştirilir</li>
+        </ul>
+        <p>
+            <strong>Bu politikayı düzenli olarak gözden geçirmenizi öneririz.</strong> Değişikliklerden 
+            sonra uygulamayı kullanmaya devam ederek, güncellenmiş politikayı kabul etmiş olursunuz.
+        </p>
+    </div>
+
+    <h2>13. Diğer Web Sitelerine Bağlantılar</h2>
+
+    <p>
+        Uygulamamız, bizim tarafımızdan işletilmeyen üçüncü taraf web sitelerine bağlantılar içerebilir. 
+        Üçüncü taraf bir bağlantıya tıklarsanız, o sitenin gizlilik politikasını incelemenizi öneririz.
+    </p>
+
+    <div class="highlight-box">
+        <p>
+            <strong>Sorumluluk Reddi:</strong> Üçüncü taraf sitelerin içeriği, gizlilik politikaları 
+            veya uygulamaları üzerinde hiçbir kontrolümüz yoktur ve sorumluluk kabul etmemekteyiz.
+        </p>
+    </div>
+
+    <div class="contact-section">
+        <h2>📞 Bizimle İletişime Geçin</h2>
+        <p>
+            Bu Gizlilik Politikası hakkında herhangi bir sorunuz, endişeniz veya öneriniz varsa, 
+            lütfen bizimle iletişime geçmekten çekinmeyin:
+        </p>
+        <p><strong>Arrow App Studio</strong></p>
+        <p>📧 E-posta: <a href="mailto:arrowappstudioiletisim@gmail.com" class="email-link">arrowappstudioiletisim@gmail.com</a></p>
+        <p>🌍 Konum: Türkiye</p>
+        <p style="margin-top: 20px; font-size: 14px; color: #718096;">
+            Başvurularınız en geç 30 gün içinde yanıtlanacaktır.
+        </p>
+    </div
