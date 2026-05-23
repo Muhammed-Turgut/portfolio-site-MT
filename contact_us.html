@@ -4,303 +4,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammed Turgut</title>
+    <title>Stark Core Connect - İletişim</title>
+    
+    <!-- 🎨 Aynı fütüristik stil dosyasını yüklüyoruz -->
+    <link rel="stylesheet" href="style.css">
+    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        @font-face {
-            font-family: 'GTProelium';
-            src: url('assets/fonts/gt_proelium.otf') format('opentype');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        @font-face {
-            font-family: 'Hatten';
-            src: url('assets/fonts/hatten.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-        }
-
+        /* İletişim sayfasına özel ek ince ayarlar */
         body {
-            font-family: 'Arial Black', Arial, sans-serif;
-            background: #06202B;
-            min-height: 100vh;
-            padding: 40px 20px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        h1 {
-            font-family: 'GTProelium', Arial Black, sans-serif;
-            color: #6ee7d4;
-            font-size: 48px;
-            font-weight: 900;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            letter-spacing: 2px;
-        }
-
-        h3 {
-            font-family: 'GTProelium', Arial Black, sans-serif;
-            color: #ffffff;
-            font-size: 24px;
-            font-weight: 900;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            letter-spacing: 2px;
-        }
-
-        p {
-            font-family: 'Hatten', sans-serif;
-            font-weight: normal;
-            color: #ffffff;
-            font-size: 20px;
-            margin-bottom: 10px;
-            letter-spacing: 2px;
-        }
-
-        .logo {
-            margin-bottom: 60px;
-        }
-
-        .logo img {
-            width: 60px;
-            height: auto;
-        }
-
-        h1 {
-            color: #6ee7d4;
-            font-size: 48px;
-            font-weight: 900;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            letter-spacing: 2px;
-        }
-
-        .title-underline {
-            width: 100%;
-            height: 4px;
-            background: #6ee7d4;
-            margin-bottom: 60px;
-        }
-
-        .content-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: start;
-        }
-
-        .contact-info {
-            color: white;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 50px;
-        }
-
-        .info-icon {
-            width: 60px;
-            height: 60px;
-            margin-right: 25px;
-            flex-shrink: 0;
-        }
-
-        .info-icon svg {
-            width: 100%;
-            height: 100%;
-            fill: #6ee7d4;
-        }
-
-        .info-text h3 {
-            font-size: 28px;
-            font-weight: 900;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-            letter-spacing: 1px;
-        }
-
-        .info-text p {
-            font-size: 24px;
-            font-weight: 700;
-        }
-
-        .cv-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 15px;
-            background: #6ee7d4;
-            color: #0a2e3d;
-            padding: 20px 40px;
-            border-radius: 15px;
-            text-decoration: none;
-            font-size: 32px;
-            font-weight: 900;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            margin-top: 20px;
-        }
-
-        .cv-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(110, 231, 212, 0.3);
-        }
-
-        .cv-icon {
-            width: 35px;
-            height: 35px;
-        }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .form-input {
-            width: 100%;
-            padding: 20px 25px;
-            font-size: 18px;
-            font-weight: 600;
-            color: #888;
-            background: white;
-            border: none;
-            outline: none;
-            font-family: Arial, sans-serif;
-        }
-
-        .form-input::placeholder {
-            color: #888;
-            font-weight: 600;
-        }
-
-        textarea.form-input {
-            min-height: 250px;
-            resize: vertical;
-        }
-
-        .submit-button {
-            width: 100%;
-            padding: 25px;
-            background: transparent;
-            border: 3px solid #6ee7d4;
-            color: #6ee7d4;
-            font-size: 24px;
-            font-weight: 900;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .contact-page-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
         }
 
-        .submit-button:hover {
-            background: #6ee7d4;
-            color: #0a2e3d;
-            transform: translateY(-2px);
+        .back-home-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 40px;
+            transition: all 0.3s ease;
         }
 
-        .submit-icon {
-            width: 25px;
-            height: 25px;
+        .back-home-btn:hover {
+            color: var(--accent-red);
+            transform: translateX(-5px);
         }
 
-        @media (max-width: 968px) {
-            .content-wrapper {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
+        .back-home-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
 
-            h1 {
-                font-size: 36px;
-            }
+        .contact-header {
+            margin-bottom: 50px;
+        }
 
-            .info-text h3 {
-                font-size: 22px;
-            }
+        .contact-title {
+            font-size: 3.5rem;
+            font-family: var(--font-title);
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
 
-            .info-text p {
-                font-size: 18px;
-            }
+        .contact-title span {
+            color: var(--accent-red);
+            text-shadow: 0 0 10px rgba(255, 28, 64, 0.4);
+        }
 
-            .cv-button {
-                font-size: 24px;
-                padding: 15px 30px;
-            }
+        .title-divider {
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-red), var(--accent-gold), transparent);
         }
     </style>
+    
+    <script src="contact.js" defer></script>
 </head>
 
 <body>
-    <div class="container">
-        <div class="logo">
-            <a href="index.html">
-                <img src="assets/image/site_logo.png" alt="MU Logo">
-            </a>
+    <!-- 🌌 Arka Plan Fütüristik Işımalar -->
+    <div class="blur-circle blur-circle-1"></div>
+    <div class="blur-circle blur-circle-2"></div>
+
+    <div class="contact-page-container">
+        <!-- Ana Sayfaya Dönüş -->
+        <a href="index.html" class="back-home-btn">
+            <svg viewBox="0 0 24 24">
+                <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+            </svg>
+            ANA SAYFAYA DÖN
+        </a>
+
+        <!-- Başlık -->
+        <div class="contact-header">
+            <h1 class="contact-title">STARK CORE<span> CONNECT</span></h1>
+            <div class="title-divider"></div>
         </div>
 
-
-        <h1>Contact Us</h1>
-        <div class="title-underline"></div>
-
-        <div class="content-wrapper">
-            <div class="contact-info">
+        <!-- İletişim Detayları Grid -->
+        <div class="contact-grid" style="margin-top: 0;">
+            <!-- İletişim Bilgileri -->
+            <div class="contact-info-container">
+                <h3 class="contact-subtitle">İLETİŞİM PROTOKOLLERİ</h3>
+                
                 <div class="info-item">
                     <div class="info-icon">
                         <svg viewBox="0 0 24 24">
-                            <path
-                                d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
+                            <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
                         </svg>
                     </div>
                     <div class="info-text">
-                        <h3>Phone:</h3>
+                        <h3>Telefon:</h3>
                         <p>0544 673 8200</p>
                     </div>
                 </div>
-
+                
                 <div class="info-item">
                     <div class="info-icon">
                         <svg viewBox="0 0 24 24">
-                            <path
-                                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                         </svg>
                     </div>
                     <div class="info-text">
-                        <h3>Mail:</h3>
+                        <h3>E-Posta:</h3>
                         <p>muhammedtturgut@gmail.com</p>
                     </div>
                 </div>
-
-                <a href="#" class="cv-button">
-                    <svg class="cv-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
-                    </svg>
-                    My CV
-                </a>
+                
+                <div style="margin-top: 50px;">
+                    <a href="#" class="btn-stark btn-stark-outlined" style="gap: 10px;">
+                        <svg viewBox="0 0 24 24" fill="currentColor" style="width: 20px; height: 20px;">
+                            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
+                        </svg>
+                        ÖZGEÇMİŞİMİ (CV) İNDİR
+                    </a>
+                </div>
             </div>
-
+            
+            <!-- Fütüristik İletişim Formu -->
             <form class="contact-form">
-                <input type="text" class="form-input" placeholder="Your Name" required>
-                <input type="email" class="form-input" placeholder="Your Mail" required>
-                <textarea class="form-input" placeholder="Your Message" required></textarea>
-                <button type="submit" class="submit-button">
-                    <svg class="submit-icon" viewBox="0 0 24 24" fill="currentColor">
+                <input type="text" class="form-input" placeholder="Adınız Soyadınız" required>
+                <input type="email" class="form-input" placeholder="E-Posta Adresiniz" required>
+                <textarea class="form-input" placeholder="Bana iletmek istediğiniz mesaj..." required></textarea>
+                <button type="submit" class="btn-submit">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
                         <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
                     </svg>
-                    Contact Us
+                    MESAJI İLET ⚡
                 </button>
             </form>
         </div>
