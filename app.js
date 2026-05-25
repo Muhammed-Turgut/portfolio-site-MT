@@ -298,6 +298,15 @@ document.addEventListener("DOMContentLoaded", () => {
         const modal = document.getElementById("project-modal");
         const body = document.getElementById("project-modal-body");
         
+        const appKeys = {
+            1: "qritik",
+            2: "avatar",
+            3: "caremate",
+            4: "timenest",
+            5: "aninda"
+        };
+        const appKey = appKeys[proj.id];
+        
         body.innerHTML = `
             <div class="modal-grid">
                 <div class="modal-left">
@@ -310,6 +319,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     <a href="${proj.githubUrl}" class="modal-github-btn" target="_blank" rel="noopener noreferrer">
                         GitHub Kodunu İncele 🛠️
                     </a>
+                    ${appKey ? `
+                    <a href="privacy_policy.html?app=${appKey}" class="modal-privacy-btn" target="_blank" style="margin-top: 10px; display: inline-block; width: 100%; text-align: center;">
+                        Gizlilik Politikası 🛡️
+                    </a>
+                    ` : ''}
                 </div>
                 <div class="modal-right">
                     <h3>PROJE DETAYI</h3>

@@ -1220,6 +1220,27 @@ textarea.form-input {
   box-shadow: 0 6px 20px rgba(255, 28, 64, 0.5);
 }
 
+.modal-privacy-btn {
+  background: transparent;
+  color: var(--accent-gold);
+  border: 1px solid var(--accent-gold);
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 0 10px rgba(255, 183, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.modal-privacy-btn:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 183, 0, 0.08);
+  box-shadow: 0 6px 20px rgba(255, 183, 0, 0.25);
+  color: #fff;
+}
+
 .modal-right h3 {
   font-size: 1.1rem;
   color: var(--accent-gold);

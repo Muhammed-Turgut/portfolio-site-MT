@@ -3,8 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gizlilik Politikası - Litra AR Draw</title>
+    <title>Stark Core // Privacy Policy Center</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
     <style>
+        /* 🎨 Iron Man / Stark Industries Tasarım Sistemi & Değişkenleri */
+        :root {
+            --main-bg: #0b0809;             /* Metalik Karbon Siyahı */
+            --card-bg: rgba(20, 15, 17, 0.75); /* Yarı saydam metalik panel */
+            --accent-red: #ff1c40;          /* Hot Rod Stark Kırmızısı */
+            --accent-red-hover: #e51335;
+            --accent-gold: #ffb700;         /* Zırh Altın Sarısı */
+            --glow-cyan: #00f0ff;           /* Ark Reaktörü Buz Mavisi */
+            --text-primary: #ffffff;        /* Birincil Metin Beyazı */
+            --text-secondary: #c5bec2;      /* İkincil Kül Grisi */
+            --border-glow: rgba(0, 240, 255, 0.15);
+            
+            --font-body: 'Outfit', sans-serif;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -12,540 +31,1309 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-                         Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #333;
-            padding: 20px;
+            background-color: var(--main-bg);
+            color: var(--text-primary);
+            font-family: var(--font-body);
             line-height: 1.8;
+            overflow-x: hidden;
+            position: relative;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255, 28, 64, 0.06) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(255, 183, 0, 0.05) 0%, transparent 45%),
+                radial-gradient(circle at 50% 50%, rgba(0, 240, 255, 0.04) 0%, transparent 50%);
+            background-attachment: fixed;
+            padding: 40px 20px;
+        }
+
+        /* 🌌 Fütüristik Arka Plan Daireleri */
+        .blur-circle {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(120px);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .blur-circle-1 {
+            top: -10%;
+            right: 5%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 28, 64, 0.1) 0%, transparent 70%);
+        }
+
+        .blur-circle-2 {
+            bottom: -10%;
+            left: 5%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(0, 240, 255, 0.08) 0%, transparent 70%);
         }
 
         .container {
-            max-width: 960px;
+            max-width: 1000px;
             margin: 0 auto;
-            background: #ffffff;
-            padding: 48px;
-            border-radius: 16px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 10;
         }
 
+        /* 🦾 Stark Core Üst Panel */
         .header {
             text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 24px;
-            border-bottom: 3px solid #667eea;
+            margin-bottom: 30px;
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 28, 64, 0.25);
+            padding: 30px;
+            border-radius: 16px;
+            backdrop-filter: blur(15px);
+            box-shadow: 
+                0 15px 35px rgba(0, 0, 0, 0.6),
+                0 0 15px rgba(0, 240, 255, 0.08);
+            position: relative;
+        }
+
+        .header::before {
+            content: 'STARK CORE SECURITY PROTOCOL // v4.2';
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--accent-gold);
+            text-shadow: 0 0 5px rgba(255, 183, 0, 0.5);
+        }
+
+        .logo-container {
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+
+        .logo-container svg {
+            width: 50px;
+            height: 50px;
+            fill: var(--glow-cyan);
+            filter: drop-shadow(0 0 10px var(--glow-cyan));
+            animation: pulse-arc 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse-arc {
+            0%, 100% { filter: drop-shadow(0 0 5px var(--glow-cyan)); opacity: 0.8; }
+            50% { filter: drop-shadow(0 0 15px var(--glow-cyan)); opacity: 1; }
         }
 
         h1 {
-            font-size: 38px;
-            margin-bottom: 12px;
-            color: #1a202c;
-            font-weight: 700;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
         }
 
-        .app-name {
-            color: #667eea;
+        h1 span {
+            color: var(--accent-red);
+            text-shadow: 0 0 10px rgba(255, 28, 64, 0.4);
         }
 
-        .updated {
-            color: #718096;
-            font-size: 15px;
+        .header p {
+            color: var(--text-secondary);
+            font-size: 1rem;
             font-weight: 500;
         }
 
-        .intro {
-            background: #f7fafc;
-            padding: 24px;
-            border-radius: 12px;
-            margin-bottom: 32px;
-            border-left: 4px solid #667eea;
+        /* 📱 Uygulama Seçim Paneli (App Selector Grid) */
+        .selector-box {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 3px solid var(--accent-gold);
+            border-radius: 14px;
+            padding: 25px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
         }
 
-        h2 {
-            font-size: 26px;
-            margin-top: 40px;
-            margin-bottom: 16px;
-            color: #667eea;
-            font-weight: 600;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #e2e8f0;
+        .selector-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        h3 {
-            font-size: 20px;
-            margin-top: 28px;
-            margin-bottom: 12px;
-            color: #2d3748;
-            font-weight: 600;
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
         }
 
-        p {
-            margin-bottom: 16px;
-            color: #4a5568;
-            text-align: justify;
-        }
-
-        ul {
-            margin-left: 24px;
-            margin-bottom: 20px;
-        }
-
-        li {
-            margin-bottom: 12px;
-            color: #4a5568;
-            padding-left: 8px;
-        }
-
-        li strong {
-            color: #2d3748;
-        }
-
-        .highlight-box {
-            background: #edf2f7;
-            padding: 20px;
+        .app-btn {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--text-secondary);
+            padding: 15px;
             border-radius: 10px;
-            margin: 24px 0;
-            border-left: 4px solid #48bb78;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
-        .warning-box {
-            background: #fff5f5;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 24px 0;
-            border-left: 4px solid #f56565;
-        }
-
-        .info-box {
-            background: #ebf8ff;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 24px 0;
-            border-left: 4px solid #4299e1;
-        }
-
-        .contact-section {
-            background: #f7fafc;
-            padding: 32px;
-            border-radius: 12px;
-            margin-top: 40px;
-            text-align: center;
-        }
-
-        .contact-section h2 {
-            margin-top: 0;
-            border-bottom: none;
-        }
-
-        .email-link {
-            display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 12px 32px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            margin-top: 16px;
-            transition: background 0.3s ease;
-        }
-
-        .email-link:hover {
-            background: #5568d3;
+        .app-btn:hover {
+            background: rgba(255, 28, 64, 0.05);
+            border-color: rgba(255, 28, 64, 0.4);
+            color: #ffffff;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
         }
 
-        .footer {
-            margin-top: 48px;
-            padding-top: 24px;
-            border-top: 2px solid #e2e8f0;
-            text-align: center;
-            color: #718096;
-            font-size: 14px;
+        .app-btn.active {
+            background: rgba(0, 240, 255, 0.08);
+            border-color: var(--glow-cyan);
+            color: #ffffff;
+            box-shadow: 
+                0 0 15px rgba(0, 240, 255, 0.15),
+                inset 0 0 8px rgba(0, 240, 255, 0.05);
         }
 
-        .toc {
-            background: #f7fafc;
-            padding: 24px;
+        .app-btn-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .app-btn.active .app-btn-icon {
+            background: rgba(0, 240, 255, 0.15);
+            color: var(--glow-cyan);
+            filter: drop-shadow(0 0 5px var(--glow-cyan));
+        }
+
+        .app-btn-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .app-btn-name {
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .app-btn-category {
+            font-size: 0.75rem;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-top: 2px;
+        }
+
+        /* 📄 Kontrol Paneli (Language, Copy, Print) */
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 15px 25px;
             border-radius: 12px;
-            margin-bottom: 32px;
+            backdrop-filter: blur(10px);
         }
 
-        .toc h3 {
-            margin-top: 0;
-            margin-bottom: 16px;
-            color: #667eea;
+        /* Dil seçici toggle */
+        .lang-switch {
+            display: flex;
+            background: rgba(0,0,0,0.3);
+            border-radius: 20px;
+            padding: 4px;
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
-        .toc ul {
-            list-style: none;
-            margin-left: 0;
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 6px 16px;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
         }
 
-        .toc li {
+        .lang-btn.active {
+            background: var(--accent-red);
+            color: #ffffff;
+            box-shadow: 0 4px 10px rgba(255, 28, 64, 0.3);
+        }
+
+        /* İşlem butonları */
+        .action-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-action {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #ffffff;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 8px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .btn-action:hover {
+            background: rgba(0, 240, 255, 0.08);
+            border-color: var(--glow-cyan);
+            transform: translateY(-1px);
+        }
+
+        .btn-action svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        /* 📖 Gizlilik Politikası Okuma Paneli (Reading Panel) */
+        .policy-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-left: 5px solid var(--accent-red);
+            border-radius: 16px;
+            padding: 50px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            position: relative;
+        }
+
+        .policy-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, transparent 80%, rgba(0, 240, 255, 0.05) 100%);
+            border-bottom-right-radius: 16px;
+            pointer-events: none;
+        }
+
+        .policy-header {
+            margin-bottom: 35px;
+            border-bottom: 2px dashed rgba(255, 255, 255, 0.1);
+            padding-bottom: 25px;
+        }
+
+        .policy-app-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: var(--accent-gold);
+            background: rgba(255, 183, 0, 0.1);
+            border: 1px solid rgba(255, 183, 0, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .policy-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #ffffff;
             margin-bottom: 8px;
         }
 
-        .toc a {
-            color: #4a5568;
+        .policy-meta {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* Politika Metin Biçimlendirmesi */
+        .policy-body {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            text-align: justify;
+        }
+
+        .policy-body h2 {
+            font-size: 1.4rem;
+            color: #ffffff;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            font-weight: 700;
+            border-left: 3px solid var(--accent-gold);
+            padding-left: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .policy-body h3 {
+            font-size: 1.15rem;
+            color: var(--glow-cyan);
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .policy-body p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .policy-body ul {
+            margin-left: 20px;
+            margin-bottom: 25px;
+            list-style-type: none;
+        }
+
+        .policy-body li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .policy-body li::before {
+            content: '⚡';
+            position: absolute;
+            left: 0;
+            top: 1px;
+            font-size: 0.85rem;
+            color: var(--accent-red);
+        }
+
+        .policy-body strong {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        /* Özel kutular */
+        .policy-box {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-left: 4px solid var(--accent-red);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .policy-box-info {
+            border-left-color: var(--glow-cyan);
+            background: rgba(0, 240, 255, 0.02);
+        }
+
+        .policy-box-warning {
+            border-left-color: var(--accent-gold);
+            background: rgba(255, 183, 0, 0.02);
+        }
+
+        .policy-box h4 {
+            font-size: 1rem;
+            color: #ffffff;
+            margin-bottom: 8px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* 📋 Toast Uyarı Kutusu */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #0b0809;
+            border: 1px solid var(--glow-cyan);
+            border-radius: 8px;
+            padding: 15px 25px;
+            box-shadow: 0 10px 30px rgba(0, 240, 255, 0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            pointer-events: none;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast-icon {
+            color: var(--glow-cyan);
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .toast-text {
+            color: #ffffff;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* 🔗 Geri Dön Linki */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
             text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 30px;
             transition: color 0.3s ease;
         }
 
-        .toc a:hover {
-            color: #667eea;
+        .back-link:hover {
+            color: var(--accent-red);
         }
 
-        @media (max-width: 768px) {
+        /* 🖨️ YAZICI / PDF STYLING (Google Play Console için Kusursuz Çıktı) */
+        @media print {
+            body {
+                background: #ffffff !important;
+                color: #000000 !important;
+                padding: 0 !important;
+                font-size: 12pt;
+                line-height: 1.6;
+            }
+
+            .blur-circle, 
+            .header, 
+            .selector-box, 
+            .controls, 
+            .back-link,
+            .toast {
+                display: none !important; /* Çıktıda kontrolleri ve süsleri tamamen gizle */
+            }
+
             .container {
-                padding: 24px;
+                max-width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .policy-card {
+                background: #ffffff !important;
+                border: none !important;
+                padding: 0 !important;
+                box-shadow: none !important;
+            }
+
+            .policy-app-badge {
+                color: #000000 !important;
+                background: none !important;
+                border: 1px solid #000000 !important;
+                padding: 2px 8px !important;
+                font-size: 10pt !important;
+            }
+
+            .policy-title {
+                color: #000000 !important;
+                font-size: 24pt !important;
+                margin-top: 0 !important;
+            }
+
+            .policy-meta {
+                color: #555555 !important;
+                font-size: 10pt !important;
+            }
+
+            .policy-body {
+                color: #000000 !important;
+            }
+
+            .policy-body h2 {
+                color: #000000 !important;
+                border-left: 4px solid #000000 !important;
+                font-size: 16pt !important;
+                page-break-after: avoid;
+            }
+
+            .policy-body h3 {
+                color: #000000 !important;
+                font-size: 13pt !important;
+                page-break-after: avoid;
+            }
+
+            .policy-body strong {
+                color: #000000 !important;
+            }
+
+            .policy-box {
+                background: #f9f9f9 !important;
+                border: 1px solid #dddddd !important;
+                border-left: 4px solid #000000 !important;
+                color: #000000 !important;
+            }
+
+            .policy-box h4 {
+                color: #000000 !important;
+            }
+
+            .policy-body li::before {
+                content: '•' !important;
+                color: #000000 !important;
+            }
+        }
+
+        /* 📱 Mobil Uyum */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 10px;
+            }
+
+            .header {
+                padding: 20px 15px;
             }
 
             h1 {
-                font-size: 28px;
+                font-size: 1.6rem;
             }
 
-            h2 {
-                font-size: 22px;
+            .policy-card {
+                padding: 25px 20px;
+            }
+
+            .policy-title {
+                font-size: 1.5rem;
+            }
+
+            .controls {
+                flex-direction: column;
+                gap: 15px;
+                align-items: stretch;
+            }
+
+            .lang-switch {
+                justify-content: center;
+            }
+
+            .action-group {
+                justify-content: center;
             }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="header">
-        <h1><span class="app-name">Litra AR Draw</span> Gizlilik Politikası</h1>
-        <div class="updated">Son Güncelleme: 17 Aralık 2024</div>
+    <!-- 🌌 Işımalar -->
+    <div class="blur-circle blur-circle-1"></div>
+    <div class="blur-circle blur-circle-2"></div>
+
+    <div class="container">
+        <!-- 🦾 Stark Core Üst Panel -->
+        <div class="header">
+            <div class="logo-container">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                    <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                    <circle cx="12" cy="12" r="2" fill="currentColor"/>
+                    <path d="M12 3v4M12 17v4M3 12h4M17 12h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <h1>Stark <span>Privacy Center</span></h1>
+            <p>Mobil Uygulama Gizlilik Politikası & Play Store Uyum Protokolü</p>
+        </div>
+
+        <!-- 📱 Uygulama Seçim Kutusu -->
+        <div class="selector-box" id="app-selector-container">
+            <div class="selector-title">
+                <span>🛡️ Geliştirici Uygulama Listesi:</span>
+            </div>
+            <div class="app-grid" id="app-buttons-grid">
+                <!-- Javascript ile Doldurulacak -->
+            </div>
+        </div>
+
+        <!-- 📄 Kontroller (Dil, Kopyala, Yazdır) -->
+        <div class="controls">
+            <!-- Dil seçici -->
+            <div class="lang-switch">
+                <button class="lang-btn active" id="btn-lang-tr" onclick="setLanguage('tr')">Türkçe</button>
+                <button class="lang-btn" id="btn-lang-en" onclick="setLanguage('en')">English</button>
+            </div>
+            
+            <!-- Aksiyonlar -->
+            <div class="action-group">
+                <button class="btn-action" onclick="copyPolicyText()">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                    </svg>
+                    <span id="text-copy-btn">Metni Kopyala</span>
+                </button>
+                <button class="btn-action" onclick="window.print()">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/>
+                    </svg>
+                    <span id="text-print-btn">Yazdır / PDF Kaydet</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 📖 Okuma Kartı -->
+        <div class="policy-card">
+            <div class="policy-header">
+                <span class="policy-app-badge" id="policy-app-badge">Uygulama</span>
+                <h2 class="policy-title" id="policy-title">Gizlilik Politikası</h2>
+                <div class="policy-meta" id="policy-meta">Son Güncelleme: 25 Mayıs 2026 // Geliştirici: Muhammed Turgut</div>
+            </div>
+            <div class="policy-body" id="policy-body">
+                <!-- Dinamik Politika Metni Buraya Gelecek -->
+            </div>
+        </div>
+
+        <!-- 🔗 Geri Dönüş Linki -->
+        <a href="index.html" class="back-link">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+            </svg>
+            Ana Sayfaya Geri Dön
+        </a>
     </div>
 
-    <div class="intro">
-        <p>
-            <strong>Litra AR Draw</strong> uygulamasını kullanarak, kişisel bilgilerinizin güvenliğine verdiğimiz 
-            önemi kabul etmiş olursunuz. Bu Gizlilik Politikası, uygulamayı kullanırken hangi bilgilerin 
-            toplandığını, nasıl kullanıldığını ve haklarınızın neler olduğunu açıklamaktadır.
-        </p>
+    <!-- 📋 Kopyalama Toast Kutusu -->
+    <div class="toast" id="toast-notification">
+        <span class="toast-icon">✓</span>
+        <span class="toast-text" id="toast-text">Politika metni kopyalandı!</span>
     </div>
 
-    <div class="toc">
-        <h3>📋 İçindekiler</h3>
-        <ul>
-            <li>1. Tanımlar</li>
-            <li>2. Toplanan Veriler</li>
-            <li>3. Kamera ve Depolama İzinleri</li>
-            <li>4. Verilerin Kullanımı</li>
-            <li>5. Veri Güvenliği</li>
-            <li>6. Çocukların Gizliliği</li>
-            <li>7. Haklarınız</li>
-            <li>8. İletişim</li>
-        </ul>
-    </div>
+    <!-- 🧠 POLİTİKALAR VERİ TABANI & MOTORU -->
+    <script>
+        // Tüm Uygulamaların Politika Veritabanı
+        const POLICIES_DATABASE = {
+            "qritik": {
+                name: "QRitik QR Code Scanning App",
+                category: "Mobile",
+                icon: "🔍",
+                tr: {
+                    appType: "Mobil Uygulama",
+                    title: "QRitik QR Code Scanning App Gizlilik Politikası",
+                    content: `
+                        <p>Bu gizlilik politikası, <strong>Muhammed Turgut</strong> tarafından geliştirilen <strong>QRitik QR Code Scanning App</strong> mobil uygulamasının (bundan sonra "Uygulama" olarak anılacaktır) kullanımı ile ilgili koşulları ve veri işleme süreçlerini açıklar. Uygulamamızı kullanarak bu politikada yer alan esasları kabul etmiş olursunuz.</p>
+                        
+                        <h2>1. Bilgi Toplama ve Kullanımı</h2>
+                        <p><strong>QRitik uygulaması kullanıcıların gizliliğine son derece önem verir ve minimum veri toplama prensibini benimser.</strong> Uygulamayı kullanmak için herhangi bir hesap oluşturmanız veya kişisel bilgilerinizi (isim, e-posta, telefon numarası vb.) paylaşmanız gerekmez. Uygulama, doğrudan kimliğinizi belirleyebilecek hiçbir kişisel veriyi toplamaz, saklamaz veya üçüncü taraflarla paylaşmaz.</p>
 
-    <h2>1. Tanımlar ve Genel Bilgiler</h2>
-    
-    <h3>Uygulama</h3>
-    <p>
-        <strong>"Uygulama"</strong> terimi, <strong>Litra AR Draw</strong> adlı mobil uygulamayı ifade eder. 
-        Bu uygulama, artırılmış gerçeklik (AR) teknolojisi kullanarak kullanıcıların gerçek dünya üzerine 
-        çizimler yapmasını sağlayan yaratıcı bir araçtır.
-    </p>
+                        <h2>2. Cihaz İzinleri ve İşleme Amaçları</h2>
+                        <p>Uygulama, temel işlevlerini yerine getirebilmek için cihazınızda aşağıdaki izinlere gereksinim duyar. Bu izinler kapsamında erişilen hiçbir veri sunucularımıza veya herhangi bir dış kuruluşa <strong>gönderilmez</strong>; tamamen cihazınızda yerel olarak işlenir:</p>
+                        <ul>
+                            <li><strong>Kamera İzni (Camera):</strong> Uygulamanın QR kodları ve barkodları gerçek zamanlı olarak tarayabilmesi için gereklidir. Kamera görüntüsü anlık olarak Jetpack Compose ve CameraX kütüphaneleriyle cihaz üzerinde işlenir ve hiçbir şekilde kaydedilmez veya sunuculara yüklenmez.</li>
+                            <li><strong>Depolama İzni (Storage / Gallery):</strong> Oluşturduğunuz veya tarattığınız QR kod resimlerini cihazınızın galerisine kaydetmek veya galerinizden mevcut bir QR kodu seçip taratmak istediğinizde bu izne ihtiyaç duyulur.</li>
+                        </ul>
 
-    <h3>Şirket Bilgileri</h3>
-    <ul>
-        <li><strong>Geliştirici:</strong> Arrow App Studio</li>
-        <li><strong>Ülke:</strong> Türkiye</li>
-        <li><strong>İletişim:</strong> arrowappstudioiletisim@gmail.com</li>
-    </ul>
+                        <h2>3. Yerel Veri Depolama (Room Database)</h2>
+                        <p>Uygulama içerisinde yaptığınız taramaların geçmişi (Scan History) ve oluşturduğunuz kodlar, cihazınızın yerel depolama alanında güvenli bir şekilde saklanır (<strong>Room SQLite Database</strong>). Bu veriler tamamen sizin kontrolünüzdedir. Dilediğiniz zaman uygulama ayarlarından veya geçmiş ekranından tüm geçmiş verilerini tek bir tıkla kalıcı olarak silebilirsiniz.</p>
 
-    <h3>Temel Kavramlar</h3>
-    <ul>
-        <li><strong>Kişisel Veri:</strong> Kimliği belirli veya belirlenebilir gerçek kişiye ilişkin her türlü bilgi</li>
-        <li><strong>Kullanım Verisi:</strong> Uygulama kullanımı sırasında otomatik olarak toplanan veriler</li>
-        <li><strong>Cihaz:</strong> Uygulamaya erişim sağlayan akıllı telefon, tablet veya benzeri mobil cihaz</li>
-        <li><strong>Hizmet:</strong> Litra AR Draw uygulaması ve sunduğu tüm özellikler</li>
-    </ul>
+                        <h2>4. Üçüncü Taraf Hizmetler</h2>
+                        <p>Uygulama, sistem kararlılığını sağlamak ve performans analizi yapmak amacıyla aşağıdaki güvenilir üçüncü taraf hizmet sağlayıcılarının kütüphanelerini (SDK) kullanabilir:</p>
+                        <ul>
+                            <li><strong>Google Play Services:</strong> Kameranın optimize çalışması ve uygulamanın Android ekosistemine entegrasyonu için kullanılır. Google'ın kendi gizlilik politikasına tabidir.</li>
+                        </ul>
 
-    <h2>2. Toplanan Veriler ve Kapsamı</h2>
+                        <h2>5. Çocukların Gizliliği</h2>
+                        <p>Uygulamamız 13 yaşın altındaki çocuklar da dahil olmak üzere her yaştan kullanıcı için güvenlidir. Kişisel veri toplamadığımız için çocuk kullanıcıların gizliliğini ihlal edecek herhangi bir veri işleme faaliyeti gerçekleştirilmemektedir.</p>
 
-    <div class="info-box">
-        <h3>🔒 Önemli Not</h3>
-        <p>
-            <strong>Litra AR Draw uygulaması, kullanıcılarının gizliliğine saygı duyar ve minimum veri 
-            toplama prensibini benimser.</strong> Uygulamayı kullanmak için hesap oluşturmanıza gerek yoktur 
-            ve kişisel bilgilerinizi paylaşmanızı istemeyiz.
-        </p>
-    </div>
+                        <h2>6. Veri Güvenliği</h2>
+                        <p>Toplanan hiçbir kişisel veri olmadığı için, sunucu kaynaklı veri sızıntısı riski bulunmamaktadır. Cihazınızda yerel olarak saklanan verilerin güvenliği, Android işletim sisteminin sunduğu yerel güvenlik protokolleri ve sandbox mimarisiyle korunmaktadır. Cihazınızın güvenliğini sağlamak sizin sorumluluğunuzdadır.</p>
 
-    <h3>2.1. Otomatik Toplanan Veriler</h3>
-    <p>Uygulama kullanımı sırasında aşağıdaki teknik veriler otomatik olarak toplanabilir:</p>
-    <ul>
-        <li><strong>Cihaz Bilgileri:</strong> Cihaz modeli, işletim sistemi versiyonu, benzersiz cihaz tanımlayıcıları</li>
-        <li><strong>Kullanım İstatistikleri:</strong> Uygulama açılma sayısı, kullanım süreleri, hata raporları</li>
-        <li><strong>Teknik Veriler:</strong> IP adresi, ağ bağlantı tipi, uygulama performans metrikleri</li>
-        <li><strong>AR Sensör Verileri:</strong> Kamera konumu ve yönü (sadece AR özelliklerinin çalışması için)</li>
-    </ul>
+                        <h2>7. İletişim</h2>
+                        <p>Bu Gizlilik Politikası ile ilgili herhangi bir sorunuz, geri bildiriminiz veya veri silme talebiniz olması durumunda benimle doğrudan iletişime geçebilirsiniz:</p>
+                        <div class="policy-box policy-box-info">
+                            <h4>İletişim Kanalları</h4>
+                            <p>📧 E-Posta: <strong>muhammedtturgut@gmail.com</strong></p>
+                            <p>🌍 Geliştirici Web Sitesi: <a href="https://github.com/Muhammed-Turgut" target="_blank" style="color:var(--glow-cyan);">github.com/Muhammed-Turgut</a></p>
+                        </div>
+                    `
+                },
+                en: {
+                    appType: "Mobile Application",
+                    title: "QRitik QR Code Scanning App Privacy Policy",
+                    content: `
+                        <p>This privacy policy governs your use of the mobile application <strong>QRitik QR Code Scanning App</strong> (hereinafter referred to as "the Application"), developed by <strong>Muhammed Turgut</strong>. By using the Application, you consent to the data practices described in this policy.</p>
+                        
+                        <h2>1. Information Collection and Use</h2>
+                        <p><strong>QRitik highly values user privacy and adheres to a strict zero-personal-data-collection principle.</strong> You are not required to create an account or provide any personal information (such as name, email, or phone number) to use the Application. The Application does not collect, store, or share any personal data that could directly identify you.</p>
 
-    <h3>2.2. Kullanıcı Tarafından Sağlanan Veriler</h3>
-    <div class="highlight-box">
-        <p><strong>Litra AR Draw şu verileri TOPLAMAZ:</strong></p>
-        <ul>
-            <li>❌ İsim, soyisim, e-posta gibi kimlik bilgileri</li>
-            <li>❌ Telefon numarası veya adres bilgileri</li>
-            <li>❌ Ödeme veya finansal bilgiler</li>
-            <li>❌ Konum verileri (GPS)</li>
-            <li>❌ Sosyal medya profil bilgileri</li>
-        </ul>
-    </div>
+                        <h2>2. Device Permissions & Safe Data Handling</h2>
+                        <p>To deliver its core features, the Application requires the following permissions on your device. None of the data accessed via these permissions is ever <strong>uploaded to servers</strong> or shared with third parties; all operations are performed strictly offline on your device:</p>
+                        <ul>
+                            <li><strong>Camera Permission:</strong> Required for the scanner to read QR codes and barcodes in real-time. Camera frames are processed instantly in memory using Android CameraX and are never stored or transmitted.</li>
+                            <li><strong>Storage/Gallery Permission:</strong> Required to save generated QR codes directly to your device's gallery, or to import existing QR code images from your gallery for decoding.</li>
+                        </ul>
 
-    <h2>3. Kamera ve Depolama İzinleri</h2>
+                        <h2>3. Local Storage (Room Database)</h2>
+                        <p>Your scan history and generated QR codes are stored locally on your device in a secure database (<strong>Room SQLite Database</strong>). This data remains strictly under your control. You can permanently delete your entire history at any time through the Application interface.</p>
 
-    <div class="warning-box">
-        <h3>⚠️ Gerekli İzinler</h3>
-        <p>
-            Litra AR Draw, temel işlevselliğini sağlamak için bazı cihaz izinlerine ihtiyaç duyar. 
-            Bu izinler yalnızca uygulama özellikleri için kullanılır ve hiçbir veri sunucularımıza 
-            veya üçüncü taraflara gönderilmez.
-        </p>
-    </div>
+                        <h2>4. Third-Party Services</h2>
+                        <p>To ensure system stability and performance optimization, the Application may utilize standard Google system libraries:</p>
+                        <ul>
+                            <li><strong>Google Play Services:</strong> Used to optimize camera hardware integrations and application performance under the Android OS. Governed by Google's Privacy Policy.</li>
+                        </ul>
 
-    <h3>3.1. Kamera İzni</h3>
-    <p><strong>Neden Gerekli:</strong> Artırılmış gerçeklik (AR) özelliklerinin çalışması için kamera erişimi zorunludur.</p>
-    <ul>
-        <li>📸 Gerçek zamanlı kamera görüntüsü üzerine çizim yapabilme</li>
-        <li>🎨 AR şablonlarını kamera görüntüsüne yerleştirme</li>
-        <li>👁️ Perspektif ve derinlik algılama</li>
-    </ul>
-    <p><strong>Güvence:</strong> Kamera görüntüleri hiçbir zaman kaydedilmez, saklanmaz veya paylaşılmaz. Sadece cihazınızda gerçek zamanlı olarak işlenir.</p>
+                        <h2>5. Children's Privacy</h2>
+                        <p>The Application is safe for users of all ages, including children under 13. Since we do not collect any personal data, we do not engage in any tracking or profiling of children.</p>
 
-    <h3>3.2. Depolama İzni</h3>
-    <p><strong>Neden Gerekli:</strong> Oluşturduğunuz çizimleri ve eserleri kaydetmek için depolama erişimi gerekir.</p>
-    <ul>
-        <li>💾 Çizimlerinizi cihazınızın galerisine kaydetme</li>
-        <li>📤 Eserlerinizi dışa aktarma ve paylaşma</li>
-        <li>🖼️ Şablon görsellerini yükleme</li>
-    </ul>
-    <p><strong>Güvence:</strong> Depolama izni sadece sizin kaydetmeyi seçtiğiniz içerikler için kullanılır. Galerinizde bulunan diğer fotoğraflar veya dosyalara erişilmez.</p>
+                        <h2>6. Data Security</h2>
+                        <p>Since the Application does not transmit or store data on external servers, there is no risk of cloud-based data breaches. Locally stored data is protected by the Android operating system's native application sandboxing. Securing your device is your responsibility.</p>
 
-    <h3>3.3. İzin Yönetimi</h3>
-    <p>İstediğiniz zaman cihaz ayarlarından uygulama izinlerini değiştirebilir veya iptal edebilirsiniz:</p>
-    <ul>
-        <li><strong>Android:</strong> Ayarlar → Uygulamalar → Litra AR Draw → İzinler</li>
-        <li><strong>iOS:</strong> Ayarlar → Gizlilik → Kamera/Fotoğraflar → Litra AR Draw</li>
-    </ul>
+                        <h2>7. Contact Information</h2>
+                        <p>If you have any questions, feedback, or inquiries regarding this Privacy Policy, please feel free to contact me directly:</p>
+                        <div class="policy-box policy-box-info">
+                            <h4>Developer Contact</h4>
+                            <p>📧 Email: <strong>muhammedtturgut@gmail.com</strong></p>
+                            <p>🌍 Developer Profile: <a href="https://github.com/Muhammed-Turgut" target="_blank" style="color:var(--glow-cyan);">github.com/Muhammed-Turgut</a></p>
+                        </div>
+                    `
+                }
+            },
+            "litra": {
+                name: "Litra AR Draw",
+                category: "Mobile",
+                icon: "🎨",
+                tr: {
+                    appType: "Mobil Uygulama",
+                    title: "Litra AR Draw Gizlilik Politikası",
+                    content: `
+                        <p>Bu gizlilik politikası, <strong>Arrow App Studio</strong> ve geliştirici <strong>Muhammed Turgut</strong> tarafından sunulan <strong>Litra AR Draw</strong> mobil uygulamasının (bundan sonra "Uygulama" olarak anılacaktır) kullanımı ile ilgili veri işleme prensiplerini düzenlemektedir.</p>
+                        
+                        <h2>1. Bilgi Toplama ve Kullanımı</h2>
+                        <p><strong>Litra AR Draw uygulaması, kullanıcılarının gizliliğine sonsuz saygı duyar ve minimum veri toplama prensibini benimser.</strong> Uygulamayı kullanmak için bir hesap açmanız gerekmez ve kişisel bilgilerinizi paylaşmanızı istemeyiz. Uygulamamız üzerinden hiçbir kişisel veri toplanmaz, sunuculara gönderilmez veya üçüncü şahıslara satılmaz.</p>
 
-    <h2>4. Verilerin Kullanım Amaçları</h2>
+                        <h2>2. Gerekli Cihaz İzinleri ve Güvenceler</h2>
+                        <p>Uygulamanın çalışabilmesi için cihazınızda aşağıdaki donanımsal izinlerin verilmesi gereklidir. Bu izinlerin kapsamı tamamen çevrimdışıdır (offline):</p>
+                        <ul>
+                            <li><strong>Kamera İzni (Camera):</strong> Artırılmış gerçeklik (AR) teknolojisini kullanarak, gerçek zamanlı kamera görüntüsü üzerine 3D çizim şablonları yerleştirebilmeniz ve çizim yapabilmeniz için zorunludur. Kamera görüntüsü hiçbir şekilde kaydedilmez, sunucularımıza veya üçüncü taraflara gönderilmez. Sadece cihazınızda anlık olarak işlenir.</li>
+                            <li><strong>Depolama İzni (Storage):</strong> Yaktığınız çizimleri ve sanatsal çalışmaları cihazınızın galerisine kaydetmek veya galerinize yeni çizim şablonları yüklemek için kullanılır. Galerinizdeki diğer fotoğraflara veya dosyalara asla erişilmez.</li>
+                        </ul>
 
-    <p>Toplanan veriler yalnızca aşağıdaki amaçlarla kullanılır:</p>
+                        <h2>3. Üçüncü Taraf Hizmetler</h2>
+                        <p>Uygulama, AR (Artırılmış Gerçeklik) teknolojisini sunabilmek için şu resmi kütüphaneyi entegre eder:</p>
+                        <ul>
+                            <li><strong>Google ARCore (Google Play Services for AR):</strong> AR zemin algılama ve perspektif hesaplamaları için Google'ın resmi AR motorunu kullanır. Bu hizmet Google'ın gizlilik politikasına tabidir.</li>
+                        </ul>
 
-    <h3>4.1. Temel Hizmet Sunumu</h3>
-    <ul>
-        <li>Uygulamanın temel AR çizim özelliklerinin çalışmasını sağlamak</li>
-        <li>Kullanıcı deneyimini optimize etmek ve iyileştirmek</li>
-        <li>Teknik sorunları tespit etmek ve çözmek</li>
-    </ul>
+                        <h2>4. Çocukların Gizliliği</h2>
+                        <p>Uygulama 13 yaş altındaki çocukların kullanımına uygundur. Çocukların kamera görüntüleri veya çizimleri hiçbir şekilde toplanmadığı ve kaydedilmediği için tam bir gizlilik güvencesi sunulmaktadır.</p>
 
-    <h3>4.2. Performans İyileştirme</h3>
-    <ul>
-        <li>Uygulama performansını analiz etmek ve optimize etmek</li>
-        <li>Çökme raporlarını inceleyerek hataları düzeltmek</li>
-        <li>Yeni özellikler geliştirmek ve test etmek</li>
-    </ul>
+                        <h2>5. İletişim</h2>
+                        <p>Gizlilik politikamızla ilgili her türlü soru, görüş ve önerileriniz için:</p>
+                        <div class="policy-box policy-box-info">
+                            <h4>Geliştirici İletişim</h4>
+                            <p>📧 E-posta: <strong>arrowappstudioiletisim@gmail.com</strong> veya <strong>muhammedtturgut@gmail.com</strong></p>
+                        </div>
+                    `
+                },
+                en: {
+                    appType: "Mobile Application",
+                    title: "Litra AR Draw Privacy Policy",
+                    content: `
+                        <p>This privacy policy regulates the data processing principles of the mobile application <strong>Litra AR Draw</strong> (hereinafter referred to as "the Application"), offered by <strong>Arrow App Studio</strong> and developer <strong>Muhammed Turgut</strong>.</p>
+                        
+                        <h2>1. Information Collection and Use</h2>
+                        <p><strong>Litra AR Draw highly respects user privacy and adopts a minimal data collection model.</strong> You do not need to register an account, and we do not request, collect, or store any personal data (such as names, emails, or phone numbers).</p>
 
-    <h3>4.3. Güvenlik ve Yasal Yükümlülükler</h3>
-    <ul>
-        <li>Sistemin güvenliğini sağlamak ve kötüye kullanımı önlemek</li>
-        <li>Yasal gereksinimlere ve düzenlemelere uymak</li>
-        <li>Gerekli durumlarda yetkili mercilerle işbirliği yapmak</li>
-    </ul>
+                        <h2>2. Required Device Permissions & Safeguards</h2>
+                        <p>To enable its core features, the Application requires the following hardware permissions. The scope of these permissions is strictly offline:</p>
+                        <ul>
+                            <li><strong>Camera Permission:</strong> Mandatory for augmented reality (AR) features to detect surfaces and overlay drawing templates on your real-time camera view. Camera feeds are processed purely locally in real-time and are never recorded or sent to any server.</li>
+                            <li><strong>Storage Permission:</strong> Used solely to save your finished sketches directly to your device's photo library or to load background image templates. Your other private photos are never accessed.</li>
+                        </ul>
 
-    <h2>5. Veri Paylaşımı ve Üçüncü Taraflar</h2>
+                        <h2>3. Third-Party Services</h2>
+                        <p>To provide advanced AR features, the Application integrates Google's official AR platform:</p>
+                        <ul>
+                            <li><strong>Google ARCore:</strong> Enables physical surface tracking and perspective calculations. Subject to Google's Privacy Policy.</li>
+                        </ul>
 
-    <div class="info-box">
-        <h3>🛡️ Gizlilik Taahhüdü</h3>
-        <p>
-            <strong>Litra AR Draw, kullanıcı verilerini üçüncü taraflarla paylaşmaz, satmaz 
-            veya kiralamaz.</strong> Verileriniz yalnızca yasal zorunluluklar veya aşağıda belirtilen 
-            sınırlı durumlar dışında paylaşılmaz.
-        </p>
-    </div>
+                        <h2>4. Children's Privacy</h2>
+                        <p>The Application is fully suitable for children under 13. Since no camera data or user sketches are ever stored or uploaded, we guarantee absolute privacy protection for young creators.</p>
 
-    <h3>5.1. Hizmet Sağlayıcılar</h3>
-    <p>Uygulama işlevselliği için aşağıdaki üçüncü taraf hizmetler kullanılabilir:</p>
-    <ul>
-        <li><strong>Analitik Hizmetler:</strong> Anonim kullanım istatistikleri (Google Analytics, Firebase vb.)</li>
-        <li><strong>Hata Takip:</strong> Çökme raporları ve hata ayıklama (Crashlytics vb.)</li>
-        <li><strong>Altyapı Sağlayıcılar:</strong> Sunucu ve veri depolama hizmetleri</li>
-    </ul>
+                        <h2>5. Contact Information</h2>
+                        <p>For any questions or feedback regarding this privacy policy, please contact us at:</p>
+                        <div class="policy-box policy-box-info">
+                            <h4>Developer Contact</h4>
+                            <p>📧 Email: <strong>arrowappstudioiletisim@gmail.com</strong> or <strong>muhammedtturgut@gmail.com</strong></p>
+                        </div>
+                    `
+                }
+            },
+            "avatar": {
+                name: "AI Avatar Generator",
+                category: "AI",
+                icon: "🤖",
+                tr: {
+                    appType: "Yapay Zeka Uygulaması",
+                    title: "AI Avatar Generator Gizlilik Politikası",
+                    content: `
+                        <p>Bu gizlilik politikası, <strong>Muhammed Turgut</strong> tarafından geliştirilen <strong>AI Avatar Generator</strong> mobil uygulaması ile yüklediğiniz fotoğrafların ve verilerinizin yapay zeka ile işlenme süreçlerini açıklar.</p>
+                        
+                        <h2>1. Toplanan Veriler ve Yapay Zeka İşlemleri</h2>
+                        <p>Uygulamamız, benzersiz yapay zeka destekli avatarlar üretebilmek amacıyla kullanıcı tarafından yüklenen fotoğrafları işler:</p>
+                        <ul>
+                            <li><strong>Yüklenen Fotoğraflar:</strong> Avatar üretmek üzere seçtiğiniz fotoğraflar, HTTPS/SSL protokolüyle şifrelenmiş güvenli bağlantılar üzerinden bulut tabanlı yapay zeka üretim API'lerimize gönderilir.</li>
+                            <li><strong>Geçici Saklama Güvencesi:</strong> Fotoğraflarınız sadece avatar üretimi süresince (birkaç dakika) işlenir. Avatar üretimi başarıyla tamamlandıktan veya başarısız olup işlem sonlandıktan hemen sonra yüklediğiniz kaynak fotoğraflar bulut sunucularımızdan <strong>tamamen ve kalıcı olarak silinir</strong>.</li>
+                        </ul>
 
-    <h3>5.2. Yasal Gereklilikler</h3>
-    <p>Aşağıdaki durumlarda verilerinizi paylaşmak zorunda kalabiliriz:</p>
-    <ul>
-        <li>Mahkeme kararı veya yasal süreç gereği</li>
-        <li>Kamu güvenliği veya kolluk kuvvetleri talebi</li>
-        <li>Yasal haklarımızı korumak için gerekli olduğunda</li>
-    </ul>
+                        <h2>2. Cihaz İzinleri</h2>
+                        <ul>
+                            <li><strong>Galeri/Depolama İzni:</strong> Cihazınızdan fotoğraf seçip uygulamaya yüklemek ve üretilen avatar resmini galerinize kaydetmek için gereklidir.</li>
+                        </ul>
 
-    <h2>6. Veri Güvenliği</h2>
+                        <h2>3. Üçüncü Taraf İş ortakları</h2>
+                        <p>Yapay zeka modellerinin çalıştırılması amacıyla güvenilir endüstri standardı yapay zeka altyapı sağlayıcıları (örn. Replicate, OpenAI, Firebase) kullanılmaktadır. Bu sağlayıcılar verileri sadece bizim talimatlarımız doğrultusunda ve geçici olarak işlerler; verilerinizi kendi modellerini eğitmek amacıyla kullanamazlar.</p>
 
-    <p>
-        Verilerinizin güvenliği bizim için önceliklidir. Kişisel verilerinizi korumak için 
-        endüstri standardı güvenlik önlemleri alıyoruz:
-    </p>
+                        <h2>4. Çocukların Gizliliği</h2>
+                        <p>Uygulama 13 yaşından küçük çocukların ebeveyn gözetimi olmaksızın fotoğraf yüklemesini veya kullanmasını önermez. Yanlışlıkla yüklenen çocuk fotoğrafları tespit edildiği anda derhal sunuculardan silinmektedir.</p>
 
-    <ul>
-        <li>🔐 <strong>Şifreleme:</strong> Tüm veri iletişimleri SSL/TLS şifrelemesi ile korunur</li>
-        <li>🔒 <strong>Güvenli Depolama:</strong> Veriler güvenli sunucularda saklanır</li>
-        <li>👥 <strong>Erişim Kontrolü:</strong> Verilere sadece yetkili personel erişebilir</li>
-        <li>🔍 <strong>Düzenli Denetim:</strong> Güvenlik sistemleri düzenli olarak test edilir</li>
-        <li>⚡ <strong>Güncel Teknoloji:</strong> En son güvenlik yamalarını uygularız</li>
-    </ul>
+                        <h2>5. İletişim</h2>
+                        <p>Fotoğraflarınızın işlenmesiyle ilgili sorularınız için:</p>
+                        <div class="policy-box policy-box-info">
+                            <h4>Geliştirici İletişim</h4>
+                            <p>📧 E-posta: <strong>muhammedtturgut@gmail.com</strong></p>
+                        </div>
+                    `
+                },
+                en: {
+                    appType: "AI Application",
+                    title: "AI Avatar Generator Privacy Policy",
+                    content: `
+                        <p>This privacy policy explains how photos and data are processed inside the <strong>AI Avatar Generator</strong> mobile application developed by <strong>Muhammed Turgut</strong>.</p>
+                        
+                        <h2>1. Data Collection & AI Photo Processing</h2>
+                        <p>To generate unique AI avatars, the Application processes photos uploaded voluntarily by the user:</p>
+                        <ul>
+                            <li><strong>Uploaded Photos:</strong> The photos you select are securely transmitted over an encrypted HTTPS/SSL connection to our cloud AI processing servers.</li>
+                            <li><strong>Temporary Storage Guarantee:</strong> Your original photos are kept only for the duration of the avatar generation process (typically a few minutes). Once the avatar is generated, or if the session fails, your source photos are <strong>immediately and permanently deleted</strong> from our cloud servers. We do not store your face data.</li>
+                        </ul>
 
-    <div class="warning-box">
-        <p>
-            <strong>Önemli Uyarı:</strong> İnternet üzerinden hiçbir veri iletim yöntemi veya 
-            elektronik depolama yöntemi %100 güvenli değildir. Ticari olarak kabul edilebilir 
-            yöntemler kullanarak verilerinizi korumaya çalışsak da, mutlak güvenliği garanti edemeyiz.
-        </p>
-    </div>
+                        <h2>2. Device Permissions</h2>
+                        <ul>
+                            <li><strong>Storage/Gallery Permission:</strong> Required to select images from your device for processing and to download the newly created AI avatars to your photo library.</li>
+                        </ul>
 
-    <h2>7. Veri Saklama Süresi</h2>
+                        <h2>3. Third-Party Partners</h2>
+                        <p>We work with secure, industry-leading AI infrastructure API providers (e.g., Replicate, OpenAI, Firebase). These providers process uploaded images strictly to generate your specific avatars and are legally bound not to store or use your photos for model training.</p>
 
-    <p>Verilerinizi yalnızca gerekli olduğu sürece saklarız:</p>
+                        <h2>4. Children's Privacy</h2>
+                        <p>This Application is not intended for children under 13. If you believe a child has uploaded a photo to our service, please contact us immediately, and we will purge any associated temporary files.</p>
 
-    <ul>
-        <li><strong>Kullanım Verileri:</strong> Genellikle 90 gün içinde silinir veya anonimleştirilir</li>
-        <li><strong>Teknik Loglar:</strong> Güvenlik ve sorun giderme için maksimum 1 yıl saklanır</li>
-        <li><strong>Hata Raporları:</strong> Sorun çözüldükten sonra 30 gün içinde silinir</li>
-        <li><strong>Yasal Zorunluluklar:</strong> Kanuni saklama süreleri uygulanır</li>
-    </ul>
+                        <h2>5. Contact Information</h2>
+                        <p>For any questions or data requests regarding AI photo processing, contact us at:</p>
+                        <div class="policy-box policy-box-info">
+                            <h4>Developer Contact</h4>
+                            <p>📧 Email: <strong>muhammedtturgut@gmail.com</strong></p>
+                        </div>
+                    `
+                }
+            },
+            "caremate": {
+                name: "Care Mate Health Assistant",
+                category: "AI / Health",
+                icon: "🏥",
+                tr: {
+                    appType: "Sağlık ve Yapay Zeka Uygulaması",
+                    title: "Care Mate Health Assistant Gizlilik Politikası",
+                    content: `
+                        <p>Bu gizlilik politikası, <strong>Muhammed Turgut</strong> tarafından geliştirilen <strong>Care Mate Health Assistant</strong> mobil uygulamasının sağlık, kamera ve AI sohbet verilerini nasıl yönettiğini açıklamaktadır.</p>
+                        
+                        <h2>1. Kamera Duruş Analizi ve Sıfır Depolama İlkesi</h2>
+                        <p>Care Mate, telefonunuzun kamerasını kullanarak omurga ve duruş hizalamanızı gerçek zamanlı olarak analiz eden <strong>AI Posture Analysis</strong> aracına sahiptir:</p>
+                        <ul>
+                            <li><strong>Yerel İşleme (MediaPipe & TensorFlow):</strong> Duruş analizi sırasında kamera görüntüleri tamamen cihaz üzerinde (in-memory) işlenir.</li>
+                            <li><strong>Sıfır Depolama & Sıfır Bulut Transferi:</strong> Kamera görüntüleriniz asla kaydedilmez, fotoğraflanmaz veya buluta gönderilmez. Uygulama sadece vücut eklem noktalarını matematiksel koordinatlara dökerek anlık analiz gerçekleştirir ve görüntüyü siler.</li>
+                        </ul>
 
-    <h2>8. Çocukların Gizliliği</h2>
+                        <h2>2. AI Sağlık Asistanı Sohbeti (Smart Chat Bot)</h2>
+                        <p>Uygulama içerisindeki akıllı sohbet robotuna girdiğiniz sağlık semptomları ve sorular, anonim olarak işlenir. Bu veriler kimliğinizle eşleştirilmez ve sadece size ön rehberlik sunmak amacıyla yapay zeka modellerine gönderilir. <strong>Lütfen unutmayın: Care Mate bir doktor değildir, sadece bir asistan rehberdir.</strong></p>
 
-    <div class="highlight-box">
-        <h3>👶 13 Yaş Altı Kullanıcılar</h3>
-        <p>
-            Litra AR Draw uygulaması <strong>13 yaşın altındaki çocuklara yönelik değildir</strong> 
-            ve bilerek 13 yaşın altındaki kişilerden kişisel veri toplamayız.
-        </p>
-        <p>
-            Eğer ebeveyn veya vasi olarak, çocuğunuzun bize kişisel veri sağladığını fark ederseniz, 
-            lütfen bizimle iletişime geçin. Bu durumda, ebeveyn onayı doğrulaması yapılamadığı için 
-            ilgili bilgileri sunucularımızdan derhal sileceğiz.
-        </p>
-    </div>
+                        <h2>3. Oturum Açma ve Veri Eşitleme</h2>
+                        <p>Su, diyet ve kalori tüketim verilerinizi kaydetmek ve cihazlar arası senkronize etmek için isteğe bağlı olarak Firebase Auth ile giriş yapabilirsiniz. Bu veriler Firebase Firestore üzerinde güvenli şifreleme ile saklanır ve dilediğiniz zaman hesabınızı kapatarak tüm verilerinizi kalıcı olarak silebilirsiniz.</p>
 
-    <h3>Ebeveyn Kontrolü</h3>
-    <p>Ebeveynler ve vasiler için öneriler:</p>
-    <ul>
-        <li>Çocukların uygulama kullanımını gözetim altında tutun</li>
-        <li>Cihaz ebeveyn kontrol özelliklerini aktif edin</li>
-        <li>Uygulama izinlerini düzenli olarak kontrol edin</li>
-        <li>Çocuklarınızla çevrimiçi güvenlik hakkında konuşun</li>
-    </ul>
+                        <h2>4. Çocukların Gizliliği</h2>
+                        <p>Uygulama sağlık takibi içerdiğinden, 13 yaşından küçüklerin ebeveyn denetimi altında kullanması önerilmektedir.</p>
 
-    <h2>9. Haklarınız (KVKK Kapsamında)</h2>
+                        <h2>5. İletişim</h2>
+                        <p>Sağlık verilerinizin silinmesi veya gizlilik sorularınız için:</p>
+                        <div class="policy-box policy-box-info">
+                            <h4>Geliştirici İletişim</h4>
+                            <p>📧 E-posta: <strong>muhammedtturgut@gmail.com</strong></p>
+                        </div>
+                    `
+                },
+                en: {
+                    appType: "AI & Health Application",
+                    title: "Care Mate Health Assistant Privacy Policy",
+                    content: `
+                        <p>This privacy policy describes how health, camera, and AI chatbot data are handled in the <strong>Care Mate Health Assistant</strong> mobile application developed by <strong>Muhammed Turgut</strong>.</p>
+                        
+                        <h2>1. AI Posture Analysis & Zero-Storage Camera Policy</h2>
+                        <p>Care Mate features an <strong>AI Posture Analysis</strong> tool that uses your device's camera to analyze spine alignment and posture in real-time:</p>
+                        <ul>
+                            <li><strong>Local Processing (MediaPipe & TensorFlow Lite):</strong> Camera streams are processed instantly on-device in volatile RAM.</li>
+                            <li><strong>No Recording or Cloud Transfer:</strong> No images or video feeds are ever recorded, saved, or uploaded to any server. The AI simply extracts coordinate keypoints locally to warn you of poor posture and instantly discards the video frame.</li>
+                        </ul>
 
-    <p>
-        6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) uyarınca, kişisel verileriniz 
-        ile ilgili aşağıdaki haklara sahipsiniz:
-    </p>
+                        <h2>2. AI Health Chatbot (Smart Chat Bot)</h2>
+                        <p>Symptoms or questions typed into the Smart Chat Bot are processed anonymously. These inputs are not linked to your identity and are sent to AI language models solely to provide general wellness guidance. <strong>Please Note: Care Mate is not a medical device or a substitute for professional medical advice.</strong></p>
 
-    <div class="info-box">
-        <ul>
-            <li>✅ Kişisel verilerinizin işlenip işlenmediğini öğrenme</li>
-            <li>✅ Kişisel verileriniz işlenmişse buna ilişkin bilgi talep etme</li>
-            <li>✅ Kişisel verilerinizin işlenme amacını ve bunların amacına uygun kullanılıp kullanılmadığını öğrenme</li>
-            <li>✅ Yurt içinde veya yurt dışında kişisel verilerinizin aktarıldığı üçüncü kişileri bilme</li>
-            <li>✅ Kişisel verilerinizin eksik veya yanlış işlenmiş olması hâlinde bunların düzeltilmesini isteme</li>
-            <li>✅ KVKK'nın 7. maddesinde öngörülen şartlar çerçevesinde kişisel verilerinizin silinmesini veya yok edilmesini isteme</li>
-            <li>✅ Düzeltme, silme ve yok edilme işlemlerinin paylaşıldığı üçüncü kişilere bildirilmesini isteme</li>
-            <li>✅ İşlenen verilerin münhasıran otomatik sistemler vasıtasıyla analiz edilmesi suretiyle aleyhinize bir sonucun ortaya çıkmasına itiraz etme</li>
-            <li>✅ Kişisel verilerinizin kanuna aykırı olarak işlenmesi sebebiyle zarara uğramanız hâlinde zararın giderilmesini talep etme</li>
-        </ul>
-    </div>
+                        <h2>3. User Accounts and Data Synchronization</h2>
+                        <p>If you choose to sync your water, calorie, and weight logs across devices, you can register via Firebase Auth. Your wellness logs are securely stored in Google Firebase Cloud Firestore and will be permanently erased if you choose to delete your account in the app settings.</p>
 
-    <h3>Haklarınızı Nasıl Kullanabilirsiniz?</h3>
-    <p>Yukarıdaki haklarınızı kullanmak için bizimle iletişime geçebilirsiniz:</p>
-    <ul>
-        <li>📧 E-posta: arrowappstudioiletisim@gmail.com</li>
-        <li>📝 Başvurularınız 30 gün içinde değerlendirilecektir</li>
-        <li>🆓 Başvurular ücretsizdir (işlem maliyeti varsa yansıtılabilir)</li>
-    </ul>
+                        <h2>4. Children's Privacy</h2>
+                        <p>Care Mate is safe but due to diet tracking features, users under 13 should utilize the application under parental supervision.</p>
 
-    <h2>10. Çerezler ve Takip Teknolojileri</h2>
+                        <h2>5. Contact Information</h2>
+                        <p>To request data deletion or raise privacy concerns, reach us at:</p>
+                        <div class="policy-box policy-box-info">
+                            <h4>Developer Contact</h4>
+                            <p>📧 Email: <strong>muhammedtturgut@gmail.com</strong></p>
+                        </div>
+                    `
+                }
+            },
+            "timenest": {
+                name: "Time Nest: Pomodoro & To-Do",
+                category: "Mobile",
+                icon: "⏱️",
+                tr: {
+                    appType: "Üretkenlik Uygulaması",
+                    title: "Time Nest: Pomodoro & To-Do Gizlilik Politikası",
+                    content: `
+                        <p>Bu gizlilik politikası, <strong>Muhammed Turgut</strong> tarafından geliştirilen <strong>Time Nest: Pomodoro & To-Do</strong> mobil uygulamasının (bundan sonra "Uygulama" olarak anılacaktır) veri politikalarını açıklar.</p>
+                        
+                        <h2>1. Bilgi Toplama ve Yerel Depolama (SQLite)</h2>
+                        <p><strong>Time Nest, gizliliğe yüksek hassasiyet gösterir ve hiçbir kişisel veriyi toplamaz.</strong> Yapılacaklar listeniz (To-Do), Pomodoro çalışma süreleriniz, hedefleriniz ve odaklanma istatistikleriniz tamamen cihazınızın yerel hafızasındaki güvenli <strong>SQLite</strong> veri tabanında saklanır. Çalışma verileriniz hiçbir bulut sunucusuna gönderilmez.</p>
 
-    <p>
-        Litra AR Draw uygulaması, web tabanlı olmadığı için geleneksel çerez (cookie) kullanmaz. 
-        Ancak mobil platformlara özgü şu teknolojiler kullanılabilir:
-    </p>
+                        <h2>2. Gerekli İzinler</h2>
+                        <ul>
+                            <li><strong>Bildirim İzni (Notifications):</strong> Pomodoro odaklanma veya dinlenme süreleri bittiğinde sizi sesli/titreşimli uyarmak amacıyla yerel bildirimler göndermek için kullanılır.</li>
+                        </ul>
 
-    <ul>
-        <li><strong>Reklam Tanımlayıcıları:</strong> IDFA (iOS) ve GAID (Android) - reklam gösterimi için</li>
-        <li><strong>Analytics SDK'ları:</strong> Anonim kullanım istatistikleri toplama</li>
-        <li><strong>Crash Reporting:</strong> Hata raporlama ve performans izleme</li>
-    </ul>
+                        <h2>3. Üçüncü Taraf Analitikleri</h2>
+                        <p>Uygulama kalitesini artırmak ve çökme hatalarını tespit edebilmek amacıyla Firebase Crashlytics veya Google Analytics gibi anonim hata/kullanım takip araçları kullanılabilir. Bu araçlar kimliğinizi ele verecek hiçbir veri toplamaz.</p>
 
-    <h3>Takibi Devre Dışı Bırakma</h3>
-    <ul>
-        <li><strong>iOS:</strong> Ayarlar → Gizlilik → Reklam → Reklam İzlemeyi Sınırla</li>
-        <li><strong>Android:</strong> Ayarlar → Google → Reklamlar → Reklam kişiselleştirmeyi devre dışı bırak</li>
-    </ul>
+                        <h2>4. İletişim</h2>
+                        <p>Sorularınız ve önerileriniz için benimle iletişime geçebilirsiniz:</p>
+                        <div class="policy-box policy-box-info">
+                            <h4>Geliştirici İletişim</h4>
+                            <p>📧 E-posta: <strong>muhammedtturgut@gmail.com</strong></p>
+                        </div>
+                    `
+                },
+                en: {
+                    appType: "Productivity Application",
+                    title: "Time Nest: Pomodoro & To-Do Privacy Policy",
+                    content: `
+                        <p>This privacy policy outlines the offline-first data model of <strong>Time Nest: Pomodoro & To-Do</strong> developed by <strong>Muhammed Turgut</strong>.</p>
+                        
+                        <h2>1. Zero Cloud Data & Local Storage (SQLite)</h2>
+                        <p><strong>Time Nest values your productivity and your privacy equally, resulting in a zero-server architecture.</strong> Your tasks, checklists, Pomodoro timer logs, and monthly productivity graphs are saved exclusively on your phone's native <strong>SQLite</strong> database. Your daily schedules remain strictly personal and completely offline.</p>
 
-    <h2>11. Uluslararası Veri Transferi</h2>
+                        <h2>2. Required Permissions</h2>
+                        <ul>
+                            <li><strong>Notification Permission:</strong> Necessary to trigger local alarms and push notifications to alert you when your Pomodoro focus or break timers finish.</li>
+                        </ul>
 
-    <p>
-        Verileriniz, bulut altyapısı hizmetleri nedeniyle Türkiye dışındaki sunucularda işlenebilir. 
-        Bu durumda, verilerinizi korumak için:
-    </p>
+                        <h2>3. Third-Party Analytics</h2>
+                        <p>To resolve software bugs and improve app stability, anonymous crashes may be logged via standard frameworks like Firebase Crashlytics. No identifying metadata is processed.</p>
 
-    <ul>
-        <li>Veri işleme anlaşmaları yapılmıştır</li>
-        <li>GDPR ve KVKK standartlarına uyum sağlanmıştır</li>
-        <li>Uygun güvenlik önlemleri alınmıştır</li>
-    </ul>
+                        <h2>4. Contact Information</h2>
+                        <p>For support or feedback, please contact us at:</p>
+                        <div class="policy-box policy-box-info">
+                            <h4>Developer Contact</h4>
+                            <p>📧 Email: <strong>muhammedtturgut@gmail.com</strong></p>
+                        </div>
+                    `
+                }
+            },
+            "aninda": {
+                name: "Anında: Courier Application",
+                category: "Mobile / Logistics",
+                icon: "🛵",
+                tr: {
+                    appType: "Lojistik ve Mobil Kurye Uygulaması",
+                    title: "Anında: Courier Application Gizlilik Politikası",
+                    content: `
+                        <p>Bu gizlilik politikası, <strong>Muhammed Turgut</strong> tarafından geliştirilen <strong>Anında: Courier Application</strong> mobil uygulamasında hassas konum ve kurye verilerinin nasıl işlendiğini açıklar.</p>
+                        
+                        <h2>1. Konum Verilerinin Hassas Kullanımı (Lokasyon Takibi)</h2>
+                        <p>Uygulamamız kuryelerin teslimat süreçlerini yönetmelerini ve müşterilerin siparişlerini takip etmelerini sağlayan lojistik bir platformdur:</p>
+                        <ul>
+                            <li><strong>Hassas Konum İzni (GPS):</strong> Uygulama, kuryenin harita üzerindeki canlı konumunu belirlemek, en yakın siparişleri atamak ve teslimat rotasını optimize etmek için hassas konum verilerine ihtiyaç duyar.</li>
+                            <li><strong>Arka Planda Konum Takibi:</strong> Kurye görevdeyken, telefon ekranı kapalı olsa veya kurye başka bir uygulamaya geçse bile harita üzerinde müşteriye doğru sipariş konum güncellemesi gönderilmeye devam edilir (Arka Plan Konum İzni).</li>
+                            <li><strong>Veri Senkronizasyonu & Silme:</strong> Konum verileri, Firebase Realtime Database üzerinde şifrelenmiş olarak anlık eşitlenir ve sadece aktif sipariş teslimatı süresince saklanır. Teslimat başarıyla tamamlandığı anda konum izleme sona erer ve konum geçmişi sunuculardan kalıcı olarak silinir.</li>
+                        </ul>
 
-    <h2>12. Gizlilik Politikası Değişiklikleri</h2>
+                        <h2>2. Toplanan Diğer Veriler</h2>
+                        <ul>
+                            <li><strong>Kullanıcı Hesabı:</strong> Kurye adı, telefon numarası ve araç bilgileri Firebase üzerinde oturum doğrulaması ve teslimat güvenliği için saklanır.</li>
+                            <li><strong>Sipariş Verileri:</strong> Teslim edilecek paket bilgileri ve adresler sistemde kayıtlı tutulur.</li>
+                        </ul>
 
-    <div class="warning-box">
-        <p>
-            Bu Gizlilik Politikasını zaman zaman güncelleyebiliriz. Değişiklikler bu sayfada 
-            yayınlandığı anda yürürlüğe girer. Önemli değişiklikler için:
-        </p>
-        <ul>
-            <li>📱 Uygulama içi bildirim gönderilebilir</li>
-            <li>📧 E-posta bildirimi yapılabilir (e-posta adresiniz varsa)</li>
-            <li>📅 "Son Güncelleme" tarihi değiştirilir</li>
-        </ul>
-        <p>
-            <strong>Bu politikayı düzenli olarak gözden geçirmenizi öneririz.</strong> Değişikliklerden 
-            sonra uygulamayı kullanmaya devam ederek, güncellenmiş politikayı kabul etmiş olursunuz.
-        </p>
-    </div>
+                        <h2>3. Üçüncü Şahıslarla Veri Paylaşımı</h2>
+                        <p>Kuryenin konumu ve kimliği sadece o siparişi bekleyen müşteri ve sistem yöneticisi ile paylaşılır. Reklam veya diğer amaçlarla hiçbir üçüncü tarafa kesinlikle satılmaz veya paylaşılmaz. Canlı harita entegrasyonu için Google Haritalar API (Google Maps SDK) kullanılmaktadır.</p>
 
-    <h2>13. Diğer Web Sitelerine Bağlantılar</h2>
+                        <h2>4. İletişim ve Veri Silme Talebi</h2>
+                        <p>Hesabınızı ve tüm konum/sipariş geçmişinizi sistemlerimizden silmek için dilediğiniz zaman bizimle iletişime geçebilirsiniz. Talebiniz en geç 48 saat içinde yerine getirilecektir:</p>
+                        <div class="policy-box policy-box-info">
+                            <h4>Geliştirici İletişim</h4>
+                            <p>📧 E-posta: <strong>muhammedtturgut@gmail.com</strong></p>
+                        </div>
+                    `
+                },
+                en: {
+                    appType: "Logistics Mobile Application",
+                    title: "Anında: Courier Application Privacy Policy",
+                    content: `
+                        <p>This privacy policy explains how precise location and delivery data are processed inside the <strong>Anında: Courier Application</strong>, developed by <strong>Muhammed Turgut</strong>.</p>
+                        
+                        <h2>1. Strict & Safe Handling of Sensitive Location Data</h2>
+                        <p>The Application coordinates delivery couriers and customers. To deliver its services, it processes real-time GPS locations under strict parameters:</p>
+                        <ul>
+                            <li><strong>Precise Location Permission (GPS):</strong> Needed to detect the courier's position on the live map, calculate optimal route directions, and match couriers with nearby orders.</li>
+                            <li><strong>Background Location Tracking:</strong> While the courier is actively delivering an order, the app transmits GPS updates even if the screen is locked or the courier minimizes the app. This is necessary to show customers an accurate ETA.</li>
+                            <li><strong>Data Sync & Automatic Pruning:</strong> Coordinates are synced securely to Firebase Realtime Database and are visible only to the active customer and delivery dispatchers. As soon as the delivery is completed, location tracking shuts off and live position history is permanently deleted from our servers.</li>
+                        </ul>
 
-    <p>
-        Uygulamamız, bizim tarafımızdan işletilmeyen üçüncü taraf web sitelerine bağlantılar içerebilir. 
-        Üçüncü taraf bir bağlantıya tıklarsanız, o sitenin gizlilik politikasını incelemenizi öneririz.
-    </p>
+                        <h2>2. Other Collected Information</h2>
+                        <ul>
+                            <li><strong>Courier Profile:</strong> Name, phone number, and vehicle details are registered to secure accounts using Google Firebase.</li>
+                            <li><strong>Delivery Logs:</strong> Package details and recipient addresses are kept on system records solely for logistics fulfillment.</li>
+                        </ul>
 
-    <div class="highlight-box">
-        <p>
-            <strong>Sorumluluk Reddi:</strong> Üçüncü taraf sitelerin içeriği, gizlilik politikaları 
-            veya uygulamaları üzerinde hiçbir kontrolümüz yoktur ve sorumluluk kabul etmemekteyiz.
-        </p>
-    </div>
+                        <h2>3. Sharing and Third Parties</h2>
+                        <p>Courier locations are exclusively shared with the direct package recipient and system controllers. We never sell or distribute courier locations to advertising networks or third parties. Live map services are operated under Google Maps SDK.</p>
 
-    <div class="contact-section">
-        <h2>📞 Bizimle İletişime Geçin</h2>
-        <p>
-            Bu Gizlilik Politikası hakkında herhangi bir sorunuz, endişeniz veya öneriniz varsa, 
-            lütfen bizimle iletişime geçmekten çekinmeyin:
-        </p>
-        <p><strong>Arrow App Studio</strong></p>
-        <p>📧 E-posta: <a href="mailto:arrowappstudioiletisim@gmail.com" class="email-link">arrowappstudioiletisim@gmail.com</a></p>
-        <p>🌍 Konum: Türkiye</p>
-        <p style="margin-top: 20px; font-size: 14px; color: #718096;">
-            Başvurularınız en geç 30 gün içinde yanıtlanacaktır.
-        </p>
-    </div
+                        <h2>4. Contact & Account/Data Deletion Requests</h2>
+                        <p>You can request complete deletion of your courier profile and coordinate logs at any time. We will complete the request and verify it within 48 hours:</p>
+                        <div class="policy-box policy-box-info">
+                            <h4>Developer Contact</h4>
+                            <p>📧 Email: <strong>muhammedtturgut@gmail.com</strong></p>
+                        </div>
+                    `
+                }
+            }
+        };
+
+        // Mevcut Durum Değişkenleri
+        let currentAppKey = "qritik";
+        let currentLanguage = "tr";
+
+        // URL Parametrelerini Algılama (?app=qritik&lang=en)
+        function initAppParams() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const appParam = urlParams.get('app');
+            const langParam = urlParams.get('lang');
+
+            // Eğer geçerli bir uygulama parametresi varsa ata
+            if (appParam && POLICIES_DATABASE[appParam.toLowerCase()]) {
+                currentAppKey = appParam.toLowerCase();
+            } else {
+                currentAppKey = "qritik"; // varsayılan
+            }
+
+            // Dil parametresi kontrolü
+            if (langParam && (langParam.toLowerCase() === 'tr' || langParam.toLowerCase() === 'en')) {
+                currentLanguage = langParam.toLowerCase();
+            }
+
+            renderSelectorButtons();
+            renderActivePolicy();
+        }
+
+        // Seçim Butonlarını Oluşturma
+        function renderSelectorButtons() {
+            const grid = document.getElementById("app-buttons-grid");
+            grid.innerHTML = "";
+
+            Object.keys(POLICIES_DATABASE).forEach(key => {
+                const app = POLICIES_DATABASE[key];
+                const btn = document.createElement("button");
+                btn.className = `app-btn ${key === currentAppKey ? 'active' : ''}`;
+                btn.onclick = () => selectApp(key);
+
+                btn.innerHTML = `
+                    <div class="app-btn-icon">${app.icon}</div>
+                    <div class="app-btn-info">
+                        <span class="app-btn-name">${app.name}</span>
+                        <span class="app-btn-category">${app.category}</span>
+                    </div>
+                `;
+                grid.appendChild(btn);
+            });
+        }
+
+        // Uygulama Seçimi Tetiklendiğinde
+        function selectApp(appKey) {
+            currentAppKey = appKey;
+            
+            // Buton aktiflik sınıflarını güncelle
+            const buttons = document.querySelectorAll(".app-btn");
+            const keys = Object.keys(POLICIES_DATABASE);
+            buttons.forEach((btn, index) => {
+                if (keys[index] === appKey) {
+                    btn.classList.add("active");
+                } else {
+                    btn.classList.remove("active");
+                }
+            });
+
+            // Adresi güncelle (kullanıcı kopyalayıp play console'a atabilsin diye)
+            const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + `?app=${appKey}&lang=${currentLanguage}`;
+            window.history.pushState({ path: newUrl }, '', newUrl);
+
+            renderActivePolicy();
+        }
+
+        // Dil Seçimi Tetiklendiğinde
+        function setLanguage(lang) {
+            currentLanguage = lang;
+            
+            const btnTr = document.getElementById("btn-lang-tr");
+            const btnEn = document.getElementById("btn-lang-en");
+
+            if (lang === 'tr') {
+                btnTr.classList.add("active");
+                btnEn.classList.remove("active");
+            } else {
+                btnEn.classList.add("active");
+                btnTr.classList.remove("active");
+            }
+
+            // Arayüz kelimelerini güncelle
+            updateInterfaceText();
+
+            // Adresi güncelle
+            const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + `?app=${currentAppKey}&lang=${lang}`;
+            window.history.pushState({ path: newUrl }, '', newUrl);
+
+            renderActivePolicy();
+        }
+
+        // Arayüz Çevirileri
+        function updateInterfaceText() {
+            const trTexts = {
+                title: "Stark Privacy Center",
+                subtitle: "Mobil Uygulama Gizlilik Politikası & Play Store Uyum Protokolü",
+                selector: "🛡️ Geliştirici Uygulama Listesi:",
+                copy: "Metni Kopyala",
+                print: "Yazdır / PDF Kaydet",
+                back: "Ana Sayfaya Geri Dön"
+            };
+
+            const enTexts = {
+                title: "Stark Privacy Center",
+                subtitle: "Mobile App Privacy Policy & Play Store Console Compliance Center",
+                selector: "🛡️ Developer Application List:",
+                copy: "Copy Policy Text",
+                print: "Print / Save PDF",
+                back: "Back to Home Site"
+            };
+
+            const currentTexts = currentLanguage === 'tr' ? trTexts : enTexts;
+
+            document.querySelector(".header p").textContent = currentTexts.subtitle;
+            document.querySelector(".selector-title span").textContent = currentTexts.selector;
+            document.getElementById("text-copy-btn").textContent = currentTexts.copy;
+            document.getElementById("text-print-btn").textContent = currentTexts.print;
+            
+            // Geri Dön Linki metnini güncelle
+            const backLink = document.querySelector(".back-link");
+            backLink.innerHTML = `
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                    <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+                </svg>
+                ${currentTexts.back}
+            `;
+        }
+
+        // Aktif Politikayı Ekrana Çizdirme
+        function renderActivePolicy() {
+            const app = POLICIES_DATABASE[currentAppKey];
+            const data = app[currentLanguage];
+
+            document.getElementById("policy-app-badge").textContent = data.appType;
+            document.getElementById("policy-title").textContent = data.title;
+            
+            const lastUpdated = currentLanguage === 'tr' ? 'Son Güncelleme: 25 Mayıs 2026 // Geliştirici: Muhammed Turgut' : 'Last Updated: May 25, 2026 // Developer: Muhammed Turgut';
+            document.getElementById("policy-meta").textContent = lastUpdated;
+
+            document.getElementById("policy-body").innerHTML = data.content;
+        }
+
+        // Politika Metnini Temiz Olarak Kopyalama (Play Console Girişi İçin İdeal)
+        function copyPolicyText() {
+            const body = document.getElementById("policy-body");
+            
+            // HTML etiketlerinden arındırılmış temiz metin oluşturma
+            const tempDiv = document.createElement("div");
+            tempDiv.innerHTML = body.innerHTML;
+            
+            // Başlıkları ve listeleri daha düzgün kopyalamak için bazı düzenlemeler
+            const headings = tempDiv.querySelectorAll("h2, h3, h4");
+            headings.forEach(h => {
+                h.innerText = "\n\n" + h.innerText.toUpperCase() + "\n" + "=".repeat(h.innerText.length) + "\n";
+            });
+
+            const listItems = tempDiv.querySelectorAll("li");
+            listItems.forEach(li => {
+                li.innerText = "\n* " + li.innerText;
+            });
+
+            let cleanText = tempDiv.innerText || tempDiv.textContent;
+            
+            // Fazla satır aralıklarını düzelt
+            cleanText = cleanText.replace(/\n{3,}/g, "\n\n").trim();
+
+            // Panoya yaz
+            navigator.clipboard.writeText(cleanText).then(() => {
+                showToast(currentLanguage === 'tr' ? "Politika kopyalandı! Google Play Store Konsoluna yapıştırabilirsiniz." : "Policy text copied! Ready to paste into Google Play Console.");
+            }).catch(err => {
+                console.error("Kopyalama hatası:", err);
+            });
+        }
+
+        // Toast Bildirimi Gösterme
+        function showToast(message) {
+            const toast = document.getElementById("toast-notification");
+            const toastText = document.getElementById("toast-text");
+
+            toastText.textContent = message;
+            toast.classList.add("show");
+
+            setTimeout(() => {
+                toast.classList.remove("show");
+            }, 3500);
+        }
+
+        // Başlangıç tetiklemesi
+        window.onload = () => {
+            initAppParams();
+        };
+    </script>
+</body>
+</html>
