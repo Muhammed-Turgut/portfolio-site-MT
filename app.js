@@ -52,6 +52,17 @@ const PROJECTS = [
         iconUrl: "assets/image/anında_app.png",
         githubUrl: "https://github.com/Muhammed-Turgut/Aninda-App-MT",
         technologies: ["Kotlin", "Google Maps SDK", "Location Services", "Firebase Realtime DB", "REST API"]
+    },
+    {
+        id: 6,
+        title: "Ante Up: Odak Masası",
+        category: "Mobile",
+        description: "Odak süresi kart masasına dönüşür. Odaklanınca jeton birikir, durdurunca el dağılır. Minimalist bir odaklanma uygulaması.",
+        longDescription: "Ante Up, Pomodoro tipi odaklanmayı sade bir kart masasıyla birleştirir. Timer çalışırken avatarın kazanma ihtimali yüksektir; duraklatınca kaybetme ihtimali artar, jetonlar erir, bakiye sıfıra inerse iflas ekranı gelir. Misafir, e-posta veya Google ile giriş; liderlik tablosu, çok oyunculu masa, seri (streak) ve oturum geçmişi sunar. Tasarım siyah-beyaz, boşluklu ve minimalisttir.",
+        iconUrl: "apps/ante-up/assets/logo.jpg",
+        siteUrl: "apps/ante-up/index.html",
+        privacyUrl: "apps/ante-up/privacy.html",
+        technologies: ["Flutter", "Firebase Auth", "Cloud Firestore", "Realtime Database", "Provider"]
     }
 ];
 
@@ -74,6 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initScrollSpy();
     initModals();
     initContactForm();
+    initTopBarDropdown();
 
     // 2️⃣ DİNAMİK YETENEKLERİ YAZDIRMA VE GÖZLEMLEME (Intersection Observer)
     function renderSkills() {
@@ -151,12 +163,16 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
                     <div class="project-card-actions">
                         <button class="project-btn-detail" onclick="openProjectDetail(${proj.id})">DETAYLAR</button>
+                        ${proj.siteUrl ? `
+                        <a href="${proj.siteUrl}" class="project-btn-github">TANITIM</a>
+                        ` : `
                         <a href="${proj.githubUrl}" class="project-btn-github" target="_blank" rel="noopener noreferrer">
                             <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
                             </svg>
                             KODU GÖR
                         </a>
+                        `}
                     </div>
                 `;
                 projectsGrid.appendChild(card);
@@ -306,6 +322,9 @@ document.addEventListener("DOMContentLoaded", () => {
             5: "aninda"
         };
         const appKey = appKeys[proj.id];
+        const privacyHref = proj.privacyUrl || (appKey ? `privacy_policy.html?app=${appKey}` : "");
+        const codeHref = proj.siteUrl || proj.githubUrl;
+        const codeLabel = proj.siteUrl ? "Tanıtım sitesini aç" : "GitHub Kodunu İncele 🛠️";
         
         body.innerHTML = `
             <div class="modal-grid">
@@ -316,11 +335,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div class="modal-tech-list">
                         ${proj.technologies.map(t => `<span class="tech-tag">${t}</span>`).join('')}
                     </div>
-                    <a href="${proj.githubUrl}" class="modal-github-btn" target="_blank" rel="noopener noreferrer">
-                        GitHub Kodunu İncele 🛠️
+                    <a href="${codeHref}" class="modal-github-btn" ${proj.siteUrl ? "" : 'target="_blank" rel="noopener noreferrer"'}>
+                        ${codeLabel}
                     </a>
-                    ${appKey ? `
-                    <a href="privacy_policy.html?app=${appKey}" class="modal-privacy-btn" target="_blank" style="margin-top: 10px; display: inline-block; width: 100%; text-align: center;">
+                    ${privacyHref ? `
+                    <a href="${privacyHref}" class="modal-privacy-btn" target="_blank" style="margin-top: 10px; display: inline-block; width: 100%; text-align: center;">
                         Gizlilik Politikası 🛡️
                     </a>
                     ` : ''}
@@ -407,6 +426,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Harika bir fütüristik Toast uyarısı göster
             showToast("MESAJ BAŞARIYLA İLETİLDİ! 🚀", "Ark reaktörü sinyali alındı. En kısa sürede geri döneceğim.");
+        });
+    }
+
+    function initTopBarDropdown() {
+        const dropdown = document.querySelector(".top-dropdown");
+        const toggle = document.querySelector(".top-dropdown-toggle");
+        if (!dropdown || !toggle) return;
+
+        toggle.addEventListener("click", (event) => {
+            event.stopPropagation();
+            const isOpen = dropdown.classList.toggle("open");
+            toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+
+        document.addEventListener("click", (event) => {
+            if (!dropdown.contains(event.target)) {
+                dropdown.classList.remove("open");
+                toggle.setAttribute("aria-expanded", "false");
+            }
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") {
+                dropdown.classList.remove("open");
+                toggle.setAttribute("aria-expanded", "false");
+            }
         });
     }
 

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Ante Up</title>
+    <meta name="description" content="Privacy Policy for Ante Up, the focus table app by Muhammed Turgut.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="wrap">
+            <a class="brand" href="index.html">
+                <img class="brand-mark" src="assets/logo.jpg" alt="">
+                Ante Up
+            </a>
+            <nav class="nav">
+                <div class="nav-drop">
+                    <button type="button" aria-expanded="false">
+                        Projects
+                        <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5H7z"/></svg>
+                    </button>
+                    <div class="nav-menu">
+                        <a href="index.html">Ante Up <span>Focus Table</span></a>
+                        <a href="../../index.html#project">All projects <span>Portfolio</span></a>
+                    </div>
+                </div>
+                <a href="index.html">Product</a>
+                <a class="active keep" href="privacy.html">Privacy</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="wrap policy">
+        <p class="kicker">Ante Up</p>
+        <h1>Privacy Policy</h1>
+        <p class="meta">Last updated: 2 September 2026 · Developer: Muhammed Turgut</p>
+
+        <p>
+            This policy describes how <strong>Ante Up</strong> (“the App”) handles information.
+            Ante Up is a focus timer with a simple card table. Time becomes chips.
+            Stay focused, and the table pays. Pause, and the hand falls apart.
+        </p>
+        <p>
+            The App is made by <strong>Muhammed Turgut</strong>. By using Ante Up you agree to this policy.
+        </p>
+
+        <h2>1. What we collect</h2>
+        <p>We collect only what the table needs to run.</p>
+        <ul>
+            <li><strong>Account.</strong> You can sit as a guest (anonymous Firebase Auth), or sign in with email and password, or Google. If you register we store the email you give us, a display name, and an avatar id.</li>
+            <li><strong>Table data.</strong> Chip balance, focus minutes, wins, losses, bankrupt count, streaks, and session history (start, end, planned duration, chips won or lost, result: completed, cancelled, or bankrupt).</li>
+            <li><strong>Country flag.</strong> On first setup we ask a public IP-to-country service (<code>api.country.is</code>) for a two-letter country code. We store the code, not your IP. It is used only as a flag on your profile and the leaderboard.</li>
+            <li><strong>Settings.</strong> Sound on/off, notification preference, default focus length, and timer voice. These live on the device and may sync with your account.</li>
+            <li><strong>Multiplayer.</strong> If you join a table we store table id, seat, chips in that hand, and whether you are still seated, so other players can see the same table.</li>
+        </ul>
+        <p class="note">
+            We do not ask for camera, photos, contacts, microphone, or precise GPS.
+            Chips are an in-app score. They are not money.
+        </p>
+
+        <h2>2. How we use it</h2>
+        <ul>
+            <li>To keep you signed in and restore your seat, avatar, and chips.</li>
+            <li>To run the focus timer, card rounds, bankrupt state, and session summary.</li>
+            <li>To show stats, history, streaks, and the leaderboard (display name, avatar, chips, focus minutes, country flag).</li>
+            <li>To run shared tables in real time.</li>
+            <li>To remember sound and notification choices.</li>
+        </ul>
+        <p>We do not sell personal data. We do not use it for ads.</p>
+
+        <h2>3. Where it lives</h2>
+        <ul>
+            <li><strong>On the device.</strong> SharedPreferences cache for session, profile, stats, settings, and onboarding. Clearing app data removes this copy.</li>
+            <li><strong>Firebase Authentication.</strong> Guest, email, or Google identity.</li>
+            <li><strong>Cloud Firestore.</strong> User profile, stats, sessions, settings, streak.</li>
+            <li><strong>Firebase Realtime Database.</strong> Live multiplayer tables.</li>
+        </ul>
+        <p>
+            Google Sign-In is handled by Google. Firebase services are handled by Google.
+            Their own policies apply to those products.
+        </p>
+
+        <h2>4. What others can see</h2>
+        <p>
+            The leaderboard is public inside the App: display name, avatar, chip total,
+            focus minutes, and country flag. Players at a shared table see the same
+            seat information for that hand. We do not put your email on the board.
+        </p>
+
+        <h2>5. Subscriptions</h2>
+        <p>
+            The App may show weekly, monthly, or yearly plans. Payments are not
+            processed yet. When they are, store billing (Google Play or App Store)
+            will handle payment details. We will not store full card numbers.
+        </p>
+
+        <h2>6. Children</h2>
+        <p>
+            Ante Up is a focus game, not a real gambling product. It is not directed
+            at children under 13. We do not knowingly collect personal data from
+            children under 13. If you believe a child has created an account, email
+            us and we will delete it.
+        </p>
+
+        <h2>7. Keep, delete, ask</h2>
+        <p>
+            We keep account and table data while your account exists, so chips and
+            history can return on a new device. Guest accounts last as long as the
+            anonymous Firebase session on that device.
+        </p>
+        <p>
+            To delete your data, email <strong>muhammedtturgut@gmail.com</strong> from
+            the address on the account (or describe the guest device). We will remove
+            the Firebase profile, sessions, stats, and related table records. You can
+            also clear local app storage in system settings.
+        </p>
+        <p>
+            Depending on where you live, you may have rights to access, correct, or
+            export your data. Write to the same address.
+        </p>
+
+        <h2>8. Security</h2>
+        <p>
+            Access is limited to your signed-in user id. Traffic to Firebase uses
+            encrypted connections. No method is perfect. Protect your device and
+            password.
+        </p>
+
+        <h2>9. Changes</h2>
+        <p>
+            If this policy changes, we will update the date above. Continued use
+            after a change means you accept the new text.
+        </p>
+
+        <h2>10. Contact</h2>
+        <p class="note">
+            Muhammed Turgut<br>
+            Email: <strong>muhammedtturgut@gmail.com</strong><br>
+            Site: Ante Up on this domain
+        </p>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <span>Ante Up · Muhammed Turgut</span>
+            <a href="index.html">Back to the table</a>
+        </div>
+    </footer>
+
+    <script>
+        const drop = document.querySelector(".nav-drop");
+        const btn = drop?.querySelector("button");
+        btn?.addEventListener("click", (e) => {
+            e.stopPropagation();
+            const open = drop.classList.toggle("open");
+            btn.setAttribute("aria-expanded", open);
+        });
+        document.addEventListener("click", () => {
+            drop?.classList.remove("open");
+            btn?.setAttribute("aria-expanded", "false");
+        });
+    </script>
+</body>
+</html>
